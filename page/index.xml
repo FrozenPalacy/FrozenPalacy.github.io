@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pages on My New Hugo Site</title>
-        <link>http://example.org/page/</link>
-        <description>Recent content in Pages on My New Hugo Site</description>
+        <title>Pages on Frozen Blog</title>
+        <link>http://xfrozenx.top/page/</link>
+        <description>Recent content in Pages on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://xfrozenx.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Archives</title>
-        <link>http://example.org/page/archives/</link>
+        <link>http://xfrozenx.top/page/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/page/archives/</guid>
+        <guid>http://xfrozenx.top/page/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>About</title>
-        <link>http://example.org/page/about/</link>
+        <link>http://xfrozenx.top/page/about/</link>
         <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/page/about/</guid>
+        <guid>http://xfrozenx.top/page/about/</guid>
         <description>&lt;p&gt;Written in Go, Hugo is an open source static site generator available under the &lt;a class=&#34;link&#34; href=&#34;https://github.com/gohugoio/hugo/blob/master/LICENSE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Apache Licence 2.0.&lt;/a&gt; Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.&lt;/p&gt;
 &lt;p&gt;Hugo makes use of a variety of open source projects including:&lt;/p&gt;
@@ -44,10 +44,10 @@
         </item>
         <item>
         <title>Links</title>
-        <link>http://example.org/page/links/</link>
+        <link>http://xfrozenx.top/page/links/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/page/links/</guid>
+        <guid>http://xfrozenx.top/page/links/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;links&lt;/span&gt;:
@@ -64,10 +64,10 @@
         </item>
         <item>
         <title>Search</title>
-        <link>http://example.org/page/search/</link>
+        <link>http://xfrozenx.top/page/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/page/search/</guid>
+        <guid>http://xfrozenx.top/page/search/</guid>
         <description></description>
         </item>
         

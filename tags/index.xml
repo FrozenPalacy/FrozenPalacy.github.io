@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tags on My New Hugo Site</title>
-        <link>http://example.org/tags/</link>
-        <description>Recent content in Tags on My New Hugo Site</description>
+        <title>Tags on Frozen Blog</title>
+        <link>http://xfrozenx.top/tags/</link>
+        <description>Recent content in Tags on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://xfrozenx.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>css</title>
-        <link>http://example.org/tags/css/</link>
+        <link>http://xfrozenx.top/tags/css/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/css/</guid>
+        <guid>http://xfrozenx.top/tags/css/</guid>
         <description></description>
         </item>
         <item>
         <title>html</title>
-        <link>http://example.org/tags/html/</link>
+        <link>http://xfrozenx.top/tags/html/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/html/</guid>
+        <guid>http://xfrozenx.top/tags/html/</guid>
         <description></description>
         </item>
         <item>
         <title>markdown</title>
-        <link>http://example.org/tags/markdown/</link>
+        <link>http://xfrozenx.top/tags/markdown/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/markdown/</guid>
+        <guid>http://xfrozenx.top/tags/markdown/</guid>
         <description></description>
         </item>
         <item>
         <title>themes</title>
-        <link>http://example.org/tags/themes/</link>
+        <link>http://xfrozenx.top/tags/themes/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/themes/</guid>
+        <guid>http://xfrozenx.top/tags/themes/</guid>
         <description></description>
         </item>
         <item>
         <title>ماركداون</title>
-        <link>http://example.org/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/</link>
+        <link>http://xfrozenx.top/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/</guid>
+        <guid>http://xfrozenx.top/tags/%D9%85%D8%A7%D8%B1%D9%83%D8%AF%D8%A7%D9%88%D9%86/</guid>
         <description></description>
         </item>
         <item>
         <title>نص</title>
-        <link>http://example.org/tags/%D9%86%D8%B5/</link>
+        <link>http://xfrozenx.top/tags/%D9%86%D8%B5/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/%D9%86%D8%B5/</guid>
+        <guid>http://xfrozenx.top/tags/%D9%86%D8%B5/</guid>
         <description></description>
         </item>
         <item>
         <title>وسم مع فراغات</title>
-        <link>http://example.org/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</link>
+        <link>http://xfrozenx.top/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</guid>
+        <guid>http://xfrozenx.top/tags/%D9%88%D8%B3%D9%85-%D9%85%D8%B9-%D9%81%D8%B1%D8%A7%D8%BA%D8%A7%D8%AA/</guid>
         <description></description>
         </item>
         <item>
         <title>emoji</title>
-        <link>http://example.org/tags/emoji/</link>
+        <link>http://xfrozenx.top/tags/emoji/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://example.org/tags/emoji/</guid>
+        <guid>http://xfrozenx.top/tags/emoji/</guid>
         <description></description>
         </item>
         
