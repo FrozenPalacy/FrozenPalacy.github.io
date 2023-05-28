@@ -3,7 +3,10 @@
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Oh hey say hi!'>
 <title>About</title>
-
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
 <link rel='canonical' href='http://xfrozenx.top/page/about/'>
 
 
@@ -302,55 +305,30 @@ have a nice day bro :o</p>
      
     
         
-    <script src="https://utteranc.es/client.js" 
-        repo="FrozenPalacy/Comment-Of-Website"
-        issue-term="pathname"
-        
-        crossorigin="anonymous"
-        async
-        >
-</script>
-
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
 <style>
-    .utterances {
-        max-width: unset;
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
     }
-</style>
-
-<script>
-    let utterancesLoaded = false;
-
-    function setUtterancesTheme(theme) {
-        let utterances = document.querySelector('.utterances iframe');
-        if (utterances) {
-            utterances.contentWindow.postMessage(
-                {
-                    type: 'set-theme',
-                    theme: `github-${theme}`
-                },
-                'https://utteranc.es'
-            );
-        }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
     }
-
-    addEventListener('message', event => {
-        if (event.origin !== 'https://utteranc.es') return;
-
-        
-        utterancesLoaded = true;
-        setUtterancesTheme(document.documentElement.dataset.scheme)
-    });
-
-    window.addEventListener('onColorSchemeChange', (e) => {
-        if (!utterancesLoaded) return;
-        setUtterancesTheme(e.detail)
-    })
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"requiredMeta":["name","email"],"serverURL":"https://waline-comment-4xodgu3zw-frozenpalacy.vercel.app/"});
 </script>
-
 
     
 
     <footer class="site-footer">
+
+
     <section class="copyright">
         &copy; 
         
