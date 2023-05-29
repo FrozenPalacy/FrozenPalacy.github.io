@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Frozen Blog</title>
-        <link>http://xfrozenx.top/post/</link>
-        <description>Recent content in Posts on Frozen Blog</description>
+        <title>High School on Frozen Blog</title>
+        <link>http://xfrozenx.top/categories/high-school/</link>
+        <description>Recent content in High School on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 29 May 2023 22:20:08 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 May 2023 22:20:08 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/high-school/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>信息技术与社会</title>
         <link>http://xfrozenx.top/post/hit-%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%A4%BE%E4%BC%9A/</link>
         <pubDate>Mon, 29 May 2023 22:20:08 +0800</pubDate>
@@ -63,55 +63,6 @@
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>Inferno T A2楼战术</title>
-        <link>http://xfrozenx.top/post/inferno-t-a2%E6%A5%BC%E6%88%98%E6%9C%AF/</link>
-        <pubDate>Sat, 27 May 2023 19:13:20 +0800</pubDate>
-        
-        <guid>http://xfrozenx.top/post/inferno-t-a2%E6%A5%BC%E6%88%98%E6%9C%AF/</guid>
-        <description>&lt;p&gt;战术图：&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgse.com/i/p9L1TJJ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://s1.ax1x.com/2023/05/27/p9L1TJJ.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;p9L1TJJ.png&#34;
-	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;5人队伍，2人绿色，2人紫红色线路。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;绿色线路的任务是&lt;/strong&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;香蕉道：木桶火、闪；用于骚扰。&lt;/li&gt;
-&lt;li&gt;回中路，补链接-包点隔断烟，准备提A1。&lt;/li&gt;
-&lt;li&gt;中路给包点闪&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;紫红色线路的任务是：&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;侧道：vip火、中路烟（辅助绿色出中路）&lt;/li&gt;
-&lt;li&gt;清空锅炉房，等绿色到位。&lt;/li&gt;
-&lt;li&gt;烟囱闪，A1、A2同步。&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
-        <title>Hello_world</title>
-        <link>http://xfrozenx.top/post/hello_world/</link>
-        <pubDate>Thu, 25 May 2023 22:36:21 +0800</pubDate>
-        
-        <guid>http://xfrozenx.top/post/hello_world/</guid>
-        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#include&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;inline-math-test&#34;&gt;Inline math test&lt;/h3&gt;
-&lt;p&gt;When $ a \neq 0 $, we can find
-$$
-x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-$$
-helloworld123456789
-你好&lt;/p&gt;
 </description>
         </item>
         
