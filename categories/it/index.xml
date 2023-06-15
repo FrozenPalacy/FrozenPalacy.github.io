@@ -6,7 +6,84 @@
         <description>Recent content in IT on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 29 May 2023 22:20:08 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/it/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 15 Jun 2023 22:55:55 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/it/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>算法的基本概念</title>
+        <link>http://xfrozenx.top/post/%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+        <pubDate>Thu, 15 Jun 2023 22:55:55 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/post/%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;算法是&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;&lt;strong&gt;一系列的计算步骤，用来将输入的数据转化成输出的结果。&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;特征：
+&lt;ol&gt;
+&lt;li&gt;有穷性&lt;/li&gt;
+&lt;li&gt;确定性&lt;/li&gt;
+&lt;li&gt;可行性&lt;/li&gt;
+&lt;li&gt;有零个或多个输入&lt;/li&gt;
+&lt;li&gt;至少有一个输出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;描述方法：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;自然语言&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;流程图
+1.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+	id1([&amp;#34;起止框（表示算法开始和结束）&amp;#34;])
+	--&amp;gt;id2[&amp;#34;处理框（要处理的内容）&amp;#34;]
+	--&amp;gt;id3[/&amp;#34;输入/输出框&amp;#34;/]
+	--&amp;gt;id4{&amp;#34;判断框&amp;#34;}
+	--&amp;gt;id5((&amp;#34;连接符&amp;#34;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;伪代码&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;基本控制结构
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;顺序结构&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+A[&amp;#34;操作1&amp;#34;]--&amp;gt;B[&amp;#34;操作2&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分支结构&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+A[&amp;#34;操作1&amp;#34;]--&amp;gt;B{&amp;#34;条件&amp;#34;}
+B--&amp;gt;|是| C[&amp;#34;操作2&amp;#34;]
+B--&amp;gt;|否| D[&amp;#34;操作3&amp;#34;]
+C &amp;amp; D --&amp;gt;E[&amp;#34;分支外的操作&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;循环结构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;当循环&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+	A{&amp;#34;条件&amp;#34;}
+	A--&amp;gt;|是| B[&amp;#34;循环体&amp;#34;]
+	B--&amp;gt;A
+	A---&amp;gt;|否| C[&amp;#34;循环外的操作&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直到循环&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+	A[&amp;#34;循环体&amp;#34;]--&amp;gt;B{&amp;#34;条件&amp;#34;}
+	B--&amp;gt;|否|A
+	B--&amp;gt;|是|C[&amp;#34;循环外的操作&amp;#34;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>信息技术与社会</title>
         <link>http://xfrozenx.top/post/hit-%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E4%B8%8E%E7%A4%BE%E4%BC%9A/</link>
         <pubDate>Mon, 29 May 2023 22:20:08 +0800</pubDate>
