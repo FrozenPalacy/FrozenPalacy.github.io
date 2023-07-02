@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Carpet Extra Carpet Extra is an extension adding extra features to Fabric Carpet, like countless new dispenser behaviours, new ways to get resources in a renewable way and many others!
+For its enabled dispenser behaviours it also adds a new Scarpet event that triggers when those happen, allowing you to further customize them.
+More extensions If you&amp;rsquo;re looking for Carpet autocrafting table, it has been moved to a standalone extension you can find on its repository on Github.'>
+<title>Carpet Extra</title>
+
+
+
+
+<script async src="https://cdn.staticfile.org/mermaid/8.6.4/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Carpet Extra'>
+<meta property='og:description' content='Carpet Extra Carpet Extra is an extension adding extra features to Fabric Carpet, like countless new dispenser behaviours, new ways to get resources in a renewable way and many others!
+For its enabled dispenser behaviours it also adds a new Scarpet event that triggers when those happen, allowing you to further customize them.
+More extensions If you&amp;rsquo;re looking for Carpet autocrafting table, it has been moved to a standalone extension you can find on its repository on Github.'>
+<meta property='og:url' content='http://xfrozenx.top/post/carpet-extra/'>
+<meta property='og:site_name' content='Frozen Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-07-02T11:41:46&#43;08:00'/><meta property='article:modified_time' content='2023-07-02T11:41:46&#43;08:00'/>
+<meta name="twitter:title" content="Carpet Extra">
+<meta name="twitter:description" content="Carpet Extra Carpet Extra is an extension adding extra features to Fabric Carpet, like countless new dispenser behaviours, new ways to get resources in a renewable way and many others!
+For its enabled dispenser behaviours it also adds a new Scarpet event that triggers when those happen, allowing you to further customize them.
+More extensions If you&amp;rsquo;re looking for Carpet autocrafting table, it has been moved to a standalone extension you can find on its repository on Github.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu56f4bf5aac743e130fd779e2575843c4_43701_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Frozen Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/-minecraft/" >
+                -Minecraft
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/carpet-extra/">Carpet Extra</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jul 02, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    8 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <!-- raw HTML omitted -->
+<h2 id="carpet-extra">Carpet Extra</h2>
+<p><a class="link" href="https://github.com/gnembon/carpet-extra/actions/workflows/devbuild.yml"  target="_blank" rel="noopener"
+    ><img src="https://github.com/gnembon/carpet-extra/actions/workflows/devbuild.yml/badge.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Development Builds"
+	
+	
+></a>
+<a class="link" href="https://www.curseforge.com/minecraft/mc-mods/carpet-extra"  target="_blank" rel="noopener"
+    ><img src="http://cf.way2muchnoise.eu/full_349240_downloads.svg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="CurseForge downloads"
+	
+	
+></a>
+<a class="link" href="https://modrinth.com/mod/carpet-extra"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/modrinth/dt/carpet-extra?label=Modrinth%20downloads&amp;logo=modrinth"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Modrinth downloads"
+	
+	
+></a>
+<a class="link" href="https://github.com/gnembon/carpet-extra/releases"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/github/downloads/gnembon/carpet-extra/total?label=Github%20downloads&amp;logo=github"
+	
+	
+	
+	loading="lazy"
+	
+		alt="GitHub downloads"
+	
+	
+></a>
+<a class="link" href="https://github.com/gnembon/carpet-extra/graphs/contributors"  target="_blank" rel="noopener"
+    ><img src="https://img.shields.io/github/contributors/gnembon/carpet-extra?label=Contributors&amp;logo=github"
+	
+	
+	
+	loading="lazy"
+	
+		alt="GitHub contributors"
+	
+	
+></a>
+<a class="link" href="https://discord.gg/gn99m4QRY4"  target="_blank" rel="noopener"
+    ><img src="https://badgen.net/discord/online-members/gn99m4QRY4?icon=discord&amp;label=Discord&amp;list=what"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Discord"
+	
+	
+></a></p>
+<p>Carpet Extra is an extension adding extra features to <a class="link" href="https://github.com/gnembon/fabric-carpet"  target="_blank" rel="noopener"
+    >Fabric Carpet</a>, like countless new dispenser behaviours, new ways to get resources in a renewable way and many others!</p>
+<p>For its enabled dispenser behaviours it also adds a new <a class="link" href="/docs/scarpet/ScarpetEvents.md" >Scarpet event</a> that triggers when those happen, allowing you to further customize them.</p>
+<h2 id="more-extensions">More extensions</h2>
+<p>If you&rsquo;re looking for Carpet autocrafting table, it has been moved to a standalone extension you can find on <a class="link" href="https://github.com/gnembon/carpet-autoCraftingTable"  target="_blank" rel="noopener"
+    >its repository on Github</a>.</p>
+<p>There are also lots of other carpet extensions out there, adding countless new rules and functionality! You can find a list of them <a class="link" href="https://github.com/gnembon/fabric-carpet/wiki/List-of-Carpet-extensions"  target="_blank" rel="noopener"
+    >in the Carpet wiki</a>.</p>
+<h1 id="carpet-extra-features">Carpet Extra Features</h1>
+<h1 id="carpet-mod-settings">Carpet Mod Settings</h1>
+<h2 id="accurateblockplacement">accurateBlockPlacement</h2>
+<p>Client can provide alternative block placement.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>SURVIVAL</code></li>
+</ul>
+<h2 id="autocraftingdropper">autoCraftingDropper</h2>
+<p>Auto-crafting dropper<br>
+If a dropper points into a crafting table and contains a valid 3x3 crafting recipe, firing that<br>
+dropper will cause it to craft (drop as item) that recipe.<br>
+Overrides comparators so they indicate number of filled slots instead.<br>
+Also makes hoppers, droppers and dispensers input max 1 item per slot.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>CREATIVE</code>, <code>EXTRAS</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="betterbonemeal">betterBonemeal</h2>
+<p>Bonemeal can be used to grow sugarcane, cactus and lily pads.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code>, <code>SURVIVAL</code></li>
+</ul>
+<h2 id="blazemeal">blazeMeal</h2>
+<p>Blaze powder fertilizes netherwart.<br>
+Via dispenser or player right click actions.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>SURVIVAL</code></li>
+</ul>
+<h2 id="blockstatesyncing">blockStateSyncing</h2>
+<p>Fixes block states in F3 debug mode not updating for some blocks.<br>
+May cause increased network traffic.<br>
+Works with cactus, sugar cane, saplings, hoppers, dispensers and droppers.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="chickenshearing">chickenShearing</h2>
+<p>Chickens can be sheared to get feathers. Beware! every time u shear a chicken, it gets damaged!<br>
+Baby chickens can&rsquo;t be sheared.<br>
+Also works with dispensers</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="clericsfarmwarts">clericsFarmWarts</h2>
+<p>Clerics can warm nether farts.<br>
+This will also allow them to pick up wart items, as well as pathfind to soulsand.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code></li>
+</ul>
+<h2 id="commandping">commandPing</h2>
+<p>Enables <code>/ping</code> for players to get their ping.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>true</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>COMMAND</code>, <code>EXTRAS</code></li>
+<li>Additional notes:
+<ul>
+<li>It has an accompanying command</li>
+</ul>
+</li>
+</ul>
+<h2 id="comparatorbetteritemframes">comparatorBetterItemFrames</h2>
+<p>Allows Comparators to see item frames that are horizontal in front of them and on top the the block in front of them<br>
+Behind: Allows comparators to detect item frames in the block behind them<br>
+Lenient: Allows comparators to detect any item frames within the block behind a full block<br>
+Extended: Allows comparators to detect item frames on a full block behind the comparator</p>
+<ul>
+<li>Type: <code>ComparatorOptions</code></li>
+<li>Default value: <code>vanilla</code></li>
+<li>Allowed options: <code>vanilla</code>, <code>behind</code>, <code>lenient</code>, <code>extended</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="comparatorreadsclock">comparatorReadsClock</h2>
+<p>Allows Comparators to read the daytime instead of the rotation of clocks in item frames.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="creeperspawninginjungletemples">creeperSpawningInJungleTemples</h2>
+<p>Only creepers spawn in jungle temples.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="disableplayercollision">disablePlayerCollision</h2>
+<p>Disables player entity collision.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>CREATIVE</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="dispenserplacesblocks">dispenserPlacesBlocks</h2>
+<p>Dispensers can place blocks.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>CREATIVE</code>, <code>EXTRAS</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispenserscarvepumpkins">dispensersCarvePumpkins</h2>
+<p>Dispensers containing shears can carve pumpkins.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersfeedanimals">dispensersFeedAnimals</h2>
+<p>Dispensers can feed animals if given their breeding item.<br>
+Can also feed flowers to brown mooshrooms to give them a suspicious stew effect</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersfillminecarts">dispensersFillMinecarts</h2>
+<p>Minecarts can be filled with hoppers, chests, tnt and furnace.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXPERIMENTAL</code>, <code>FEATURE</code>, <code>EXTRAS</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersmilkanimals">dispensersMilkAnimals</h2>
+<p>Dispensers with empty buckets can milk cows/mooshrooms/goats, and get mushroom/suspicious stew from mooshrooms with bowls.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXPERIMENTAL</code>, <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersplaceboatsonice">dispensersPlaceBoatsOnIce</h2>
+<p>Dispensers can place boats on ice</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersplayrecords">dispensersPlayRecords</h2>
+<p>Dispensers can play records if there&rsquo;s a jukebox in front of them.<br>
+If a record already exists in the jukebox, it gets placed back in the dispenser.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispenserspotplants">dispensersPotPlants</h2>
+<p>Dispensers can put flowers in flower pots</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersstripblocks">dispensersStripBlocks</h2>
+<p>Dispensers with axes can strip blocks<br>
+Can strip logs, remove oxidation, and remove wax</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispenserstillsoil">dispensersTillSoil</h2>
+<p>Dispensers with hoes can till soil.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispenserstogglethings">dispensersToggleThings</h2>
+<p>Dispensers containing a stick can toggle/activate things.<br>
+Works with buttons, redstone, noteblocks, comparators, repeaters,<br>
+daylight detectors, etc.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="dispensersusecauldrons">dispensersUseCauldrons</h2>
+<p>Dispensers can empty/fill cauldrons with buckets or bottles, and undye leather armor/shulker boxes/banners</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="doubleretraction">doubleRetraction</h2>
+<p>Re-adds 1.8 double retraction to pistons.<br>
+Gives pistons the ability to double retract without side effects.<br>
+Fixes <a class="link" href="https://bugs.mojang.com/browse/MC-88959"  target="_blank" rel="noopener"
+    >MC-88959</a>.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="dragoneggbedrockbreaking">dragonEggBedrockBreaking</h2>
+<p>Reintroduce the Dragon Egg Bedrock breaking bug from 1.12.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="emptyshulkerboxstackalways">emptyShulkerBoxStackAlways</h2>
+<p>Empty Shulker Boxes will always stack, even inside inventories.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="enderpearlchunkloading">enderPearlChunkLoading</h2>
+<p>Allow horizontally moving Ender Pearls to load chunks as entity ticking.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="fallingblockdispensers">fallingBlockDispensers</h2>
+<p>Dispensers/Droppers with a block in front of them when powered will turn that block into a falling block<br>
+dispenser &amp; dropper give the same velocity to the falling block like they do in 22w13oneblockatatime</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="flowerpotchunkloading">flowerPotChunkLoading</h2>
+<p>Placing a wither rose in a flowerpot will load that chunk.<br>
+If u enable the rule the already existing chunks with flowerpots won&rsquo;t be loaded.<br>
+Also disabling the carpet rule won&rsquo;t remove the loaded chunks, u need to manually unload them using the /forceload command.<br>
+All the loaded chunks can be seen using <code>/forceload query</code></p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="hopperminecart8gtcooldown">hopperMinecart8gtCooldown</h2>
+<p>Makes Hopper Minecarts have an 8gt cooldown like hoppers.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>BUGFIX</code>, <code>FEATURE</code>, <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="hopperminecartitemtransfer">hopperMinecartItemTransfer</h2>
+<p>Allows Hopper Minecarts to transfer items into containers below them.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>BUGFIX</code>, <code>FEATURE</code>, <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="maxspongerange">maxSpongeRange</h2>
+<p>Maximum offset limit for sponge.</p>
+<ul>
+<li>Type: <code>Integer</code></li>
+<li>Default value: <code>7</code></li>
+<li>Suggested options: <code>7</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="maxspongesuck">maxSpongeSuck</h2>
+<p>Maximum water sucking for sponge.</p>
+<ul>
+<li>Type: <code>Integer</code></li>
+<li>Default value: <code>64</code></li>
+<li>Suggested options: <code>64</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="mobinfireconvertssandtosoulsand">mobInFireConvertsSandToSoulsand</h2>
+<p>If a living entity dies on sand with fire on top the sand will convert into soul sand.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="pistonredirectsredstone">pistonRedirectsRedstone</h2>
+<p>Pistons and sticky pistons redirect redstone<br>
+When retracting, they will blink visually<br>
+but that&rsquo;s only to minimize changes required for it to work</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code></li>
+</ul>
+<h2 id="reloadsuffocationfix">reloadSuffocationFix</h2>
+<p>Won&rsquo;t let mobs glitch into blocks when reloaded.<br>
+Can cause slight differences in mobs behaviour.<br>
+Fixes <a class="link" href="https://bugs.mojang.com/browse/MC-2025"  target="_blank" rel="noopener"
+    >MC-2025</a>.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>BUGFIX</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="renewableendstone">renewableEndstone</h2>
+<p>Dragon&rsquo;s breath from dispensers convert cobblestone to end stone.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code>, <code>DISPENSER</code></li>
+</ul>
+<h2 id="renewableice">renewableIce</h2>
+<p>Multiple ice crushed by falling anvils make denser ice.<br>
+frosted turns into normal, normal into packed and packed into blue</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code>, <code>FEATURE</code></li>
+</ul>
+<h2 id="renewablenetherrack">renewableNetherrack</h2>
+<p>Fire charges from dispensers convert cobblestone to netherrack.<br>
+Credits: Skyrising</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="renewablesand">renewableSand</h2>
+<p>Cobblestone crushed by falling anvils makes sand.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>EXPERIMENTAL</code>, <code>FEATURE</code></li>
+</ul>
+<h2 id="renewablewitherskeletons">renewableWitherSkeletons</h2>
+<p>Skeletons turn into wither skeletons when struck by lightning.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="repeaterpriorityfix">repeaterPriorityFix</h2>
+<p>Quick pulses won&rsquo;t get lost in repeater setups.<br>
+Probably brings back pre 1.8 behaviour.<br>
+Fixes <a class="link" href="https://bugs.mojang.com/browse/MC-54711"  target="_blank" rel="noopener"
+    >MC-54711</a>.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>BUGFIX</code>, <code>EXPERIMENTAL</code></li>
+</ul>
+<h2 id="scaffoldingdistance">scaffoldingDistance</h2>
+<p>Max distance for scaffolding.</p>
+<ul>
+<li>Type: <code>Integer</code></li>
+<li>Default value: <code>7</code></li>
+<li>Suggested options: <code>2</code>, <code>3</code>, <code>5</code>, <code>7</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+<li>Additional notes:
+<ul>
+<li>You must choose a value from 0 to 7</li>
+</ul>
+</li>
+</ul>
+<h2 id="spiderjockeysdropgapples">spiderJockeysDropGapples</h2>
+<p>Gives Spider jockeys a specified chance to drop enchanted golden apples.<br>
+0 is the default setting, no enchanted golden apples will be dropped</p>
+<ul>
+<li>Type: <code>Integer</code></li>
+<li>Default value: <code>0</code></li>
+<li>Suggested options: <code>0</code>, <code>50</code>, <code>100</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code></li>
+<li>Additional notes:
+<ul>
+<li>You must choose a value from 0 to 100</li>
+</ul>
+</li>
+</ul>
+<h2 id="strayspawninginigloos">straySpawningInIgloos</h2>
+<p>Only strays spawn in igloos.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>FEATURE</code>, <code>EXTRAS</code></li>
+</ul>
+<h2 id="variablewooddelays">variableWoodDelays</h2>
+<p>Variable delays on wooden components (buttons, pressure plates).</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXTRAS</code>, <code>FEATURE</code></li>
+</ul>
+<h2 id="y0dragoneggbedrockbreaking">y0DragonEggBedrockBreaking</h2>
+<p>Let dragon eggs break Y0 bedrock.<br>
+Requires dragonEggBedrockBreaking to be set to true.</p>
+<ul>
+<li>Type: <code>Boolean</code></li>
+<li>Default value: <code>false</code></li>
+<li>Allowed options: <code>true</code>, <code>false</code></li>
+<li>Categories: <code>EXPERIMENTAL</code>, <code>EXTRAS</code></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"requiredMeta":["name","email"],"serverURL":"https://comment.xfrozenx.top/"});
+</script>
+
+    
+
+    <footer class="site-footer">
+
+
+    <section class="copyright">
+        &copy; 
+        
+        2023 Frozen Blog
+    </section>
+        <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>	
+
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
