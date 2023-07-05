@@ -6,7 +6,15 @@
         <description>Recent content in Categories on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 02 Jul 2023 11:41:46 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 05 Jul 2023 18:31:21 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OI</title>
+        <link>http://xfrozenx.top/categories/oi/</link>
+        <pubDate>Wed, 05 Jul 2023 18:31:21 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/categories/oi/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Minecraft</title>
         <link>http://xfrozenx.top/categories/minecraft/</link>
         <pubDate>Sun, 02 Jul 2023 11:41:46 +0800</pubDate>
