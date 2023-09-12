@@ -6,7 +6,148 @@
         <description>Recent content on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 13 Jul 2023 17:08:22 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Sep 2023 22:02:25 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>时间复杂度</title>
+        <link>http://xfrozenx.top/post/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
+        <pubDate>Tue, 12 Sep 2023 22:02:25 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/post/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
+        <description>&lt;p&gt;#OI - 时间复杂度&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单循环&lt;/p&gt;
+&lt;p&gt;eg Code&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;次数&lt;/th&gt;
+&lt;th&gt;$0$&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;条件（i&lt;em&gt;i&lt;/em&gt;i）&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2^3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;etc.&lt;/p&gt;
+&lt;p&gt;规律：当执行至第$k$次时，条件数字即为$k^3$.&lt;/p&gt;
+&lt;p&gt;设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.&lt;/p&gt;
+&lt;p&gt;则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）&lt;/p&gt;
+&lt;p&gt;例2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        i &lt;span style=&#34;color:#f92672&#34;&gt;*=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;次数&lt;/th&gt;
+&lt;th&gt;$0$&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;条件（i）&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2^2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;规律：同上，$2^k=n$，$k=\log_2n$.&lt;/p&gt;
+&lt;p&gt;$\therefore O(\log n)$.&lt;/p&gt;
+&lt;p&gt;例3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; x &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;while&lt;/span&gt; (n &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;=&lt;/span&gt; (x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; (x &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        x &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;条件为$(x+1)^2$，同样列表可知$(k+1)^2=n$，$k=\sqrt{n}-1$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在时间复杂度中，常数项一般略去。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$\therefore O(\sqrt{n})$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多层循环&lt;/p&gt;
+&lt;p&gt;情况1 - 外层不影响内层&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; count &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; k &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; k &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; n; k &lt;span style=&#34;color:#f92672&#34;&gt;*=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; n; j&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            count&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可看作是两个单循环。&lt;/p&gt;
+&lt;p&gt;先计算外循环。同理列表，&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;次数&lt;/th&gt;
+&lt;th&gt;0&lt;/th&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;条件&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;故$2^k=n$，$k=\log_2n$.&lt;/p&gt;
+&lt;p&gt;内循环同理列表，$O(n)$.&lt;/p&gt;
+&lt;p&gt;整体算法的时间复杂度为内外循环相乘，$n\log_2n$.&lt;/p&gt;
+&lt;p&gt;此处注意，由于换底公式，$\log_an$与$\log_bn$仅有一个因子不同，故在计算时间复杂度时不论对数的底。&lt;/p&gt;
+&lt;p&gt;算法的时间复杂度为$O(n\log n)$.&lt;/p&gt;
+&lt;p&gt;情况2 - 外层影响内层&lt;/p&gt;
+&lt;p&gt;即内层的条件与外层有关。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, i, j;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (i &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; i &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; n; i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; j &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;; j &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;=&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;; j&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            m&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;首先介绍一些公式：&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{i=1}^ni=\frac{n(n+1)}{2}\\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}{6}
+$$&lt;/p&gt;
+&lt;p&gt;特殊地，对于常数列求和：&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{i=1}^nk=kn
+$$&lt;/p&gt;
+&lt;p&gt;那么对于此题，可知：&lt;/p&gt;
+&lt;p&gt;外层循环的循环次数为$\sum_{i=1}^n$，内层为$\sum_{j=1}^{2i}1$。&lt;/p&gt;
+&lt;p&gt;两式相乘，得到&lt;/p&gt;
+&lt;p&gt;$$
+\sum_{i=1}^n\sum_{j=1}^{2i}1=\sum_{i=1}^n2i\由公式1，原式=\frac{n(n+1)}{2}
+$$&lt;/p&gt;
+&lt;p&gt;故总共执行$\frac{n^2+n}{2}$次。时间复杂度$O(n^2)$.（取最高次）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在计算好语句块的执行次数后，需要注意在整理成时间复杂度时略去常数因子，如$\log_2n$的底、$\sqrt[3]n$的根指数等，写成$O(\log n)$、$O(\sqrt n)$.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>递归、深搜及其优化</title>
         <link>http://xfrozenx.top/post/%E9%80%92%E5%BD%92%E6%B7%B1%E6%90%9C%E5%8F%8A%E5%85%B6%E4%BC%98%E5%8C%96/</link>
         <pubDate>Thu, 13 Jul 2023 17:08:22 +0800</pubDate>
