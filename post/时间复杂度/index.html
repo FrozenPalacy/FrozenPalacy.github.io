@@ -6,7 +6,7 @@
 eg Code
 void fun(int n) { int i = 0; while (i * i * i &amp;lt;= n) i&#43;&#43;; } 次数 $0$ 1 2 条件（iii） 0 1 2^3 etc.
 规律：当执行至第$k$次时，条件数字即为$k^3$.
-设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.
+设$k^3\leq n$。令$n\rightarrow\infty$，则$k^3=n$.
 则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）
 例2
 void fun(int n) { int i = 1; while (i &amp;lt;= n) i *= 2; } 次数 $0$ 1 2 条件（i） 1 2 2^2 规律：同上，$2^k=n$，$k=\log_2n$.
@@ -62,7 +62,7 @@ code.has-jax {
 eg Code
 void fun(int n) { int i = 0; while (i * i * i &amp;lt;= n) i&#43;&#43;; } 次数 $0$ 1 2 条件（iii） 0 1 2^3 etc.
 规律：当执行至第$k$次时，条件数字即为$k^3$.
-设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.
+设$k^3\leq n$。令$n\rightarrow\infty$，则$k^3=n$.
 则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）
 例2
 void fun(int n) { int i = 1; while (i &amp;lt;= n) i *= 2; } 次数 $0$ 1 2 条件（i） 1 2 2^2 规律：同上，$2^k=n$，$k=\log_2n$.
@@ -78,7 +78,7 @@ void fun(int n) { int x = 0; while (n &amp;gt;= (x &#43; 1) * (x &#43; 1)) x &#4
 eg Code
 void fun(int n) { int i = 0; while (i * i * i &amp;lt;= n) i&#43;&#43;; } 次数 $0$ 1 2 条件（iii） 0 1 2^3 etc.
 规律：当执行至第$k$次时，条件数字即为$k^3$.
-设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.
+设$k^3\leq n$。令$n\rightarrow\infty$，则$k^3=n$.
 则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）
 例2
 void fun(int n) { int i = 1; while (i &amp;lt;= n) i *= 2; } 次数 $0$ 1 2 条件（i） 1 2 2^2 规律：同上，$2^k=n$，$k=\log_2n$.
@@ -372,7 +372,7 @@ void fun(int n) { int x = 0; while (n &amp;gt;= (x &#43; 1) * (x &#43; 1)) x &#4
 </table></div>
 <p>etc.</p>
 <p>规律：当执行至第$k$次时，条件数字即为$k^3$.</p>
-<p>设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.</p>
+<p>设$k^3\leq n$。令$n\rightarrow\infty$，则$k^3=n$.</p>
 <p>则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）</p>
 <p>例2</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fun</span>(<span style="color:#66d9ef">int</span> n)
@@ -458,7 +458,9 @@ void fun(int n) { int x = 0; while (n &amp;gt;= (x &#43; 1) * (x &#43; 1)) x &#4
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>首先介绍一些公式：</p>
 <p>$$
-\sum_{i=1}^ni=\frac{n(n+1)}{2}\\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}{6}
+\sum_{i=1}^ni=\frac{n(n+1)}{2}$$
+$$
+\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}{6}
 $$</p>
 <p>特殊地，对于常数列求和：</p>
 <p>$$
@@ -468,7 +470,9 @@ $$</p>
 <p>外层循环的循环次数为$\sum_{i=1}^n$，内层为$\sum_{j=1}^{2i}1$。</p>
 <p>两式相乘，得到</p>
 <p>$$
-\sum_{i=1}^n\sum_{j=1}^{2i}1=\sum_{i=1}^n2i\由公式1，原式=\frac{n(n+1)}{2}
+\sum_{i=1}^n\sum_{j=1}^{2i}1=\sum_{i=1}^n2i
+$$$$
+由公式1，原式=\frac{n(n+1)}{2}
 $$</p>
 <p>故总共执行$\frac{n^2+n}{2}$次。时间复杂度$O(n^2)$.（取最高次）</p>
 </li>

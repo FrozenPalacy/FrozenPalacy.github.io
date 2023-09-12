@@ -43,7 +43,7 @@
 &lt;/table&gt;
 &lt;p&gt;etc.&lt;/p&gt;
 &lt;p&gt;规律：当执行至第$k$次时，条件数字即为$k^3$.&lt;/p&gt;
-&lt;p&gt;设$k^3\leq n$。令$n\rightarrow\infin$，则$k^3=n$.&lt;/p&gt;
+&lt;p&gt;设$k^3\leq n$。令$n\rightarrow\infty$，则$k^3=n$.&lt;/p&gt;
 &lt;p&gt;则$k=\sqrt[3]{n}$.此算法的时间复杂度即为$O(\sqrt{n})$.（略去了常数因子）&lt;/p&gt;
 &lt;p&gt;例2&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fun&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; n)
@@ -129,7 +129,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;首先介绍一些公式：&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{i=1}^ni=\frac{n(n+1)}{2}\\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}{6}
+\sum_{i=1}^ni=\frac{n(n+1)}{2}$$
+$$
+\sum_{i=1}^ni^2=\frac{n(n+1)(2n+1)}{6}
 $$&lt;/p&gt;
 &lt;p&gt;特殊地，对于常数列求和：&lt;/p&gt;
 &lt;p&gt;$$
@@ -139,7 +141,9 @@ $$&lt;/p&gt;
 &lt;p&gt;外层循环的循环次数为$\sum_{i=1}^n$，内层为$\sum_{j=1}^{2i}1$。&lt;/p&gt;
 &lt;p&gt;两式相乘，得到&lt;/p&gt;
 &lt;p&gt;$$
-\sum_{i=1}^n\sum_{j=1}^{2i}1=\sum_{i=1}^n2i\由公式1，原式=\frac{n(n+1)}{2}
+\sum_{i=1}^n\sum_{j=1}^{2i}1=\sum_{i=1}^n2i
+$$$$
+由公式1，原式=\frac{n(n+1)}{2}
 $$&lt;/p&gt;
 &lt;p&gt;故总共执行$\frac{n^2+n}{2}$次。时间复杂度$O(n^2)$.（取最高次）&lt;/p&gt;
 &lt;/li&gt;
