@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='IAI727 202310月赛丙组T5 先修课程
+题目大意 一个有向图，有$n$个节点$m$条边，输入$n$和$m$和每条边的起点和终点。
+判断有向图的所有点是否都能在拓扑序中。能就输出Valid，否则输出Invalid。
+题解 看到原题有
+其中的第$i$条约束要求在学习第$y_i$ 门课程之前，必须先修完第$x_i$门课程。
+这样的优雅表述，判断可以用拓扑排序来解。
+拓扑排序是通过按照某个拓扑序的方法来遍历一张有向图。举个例子：
+这是一张有5个结点的有向图。遵循的原则是：
+当某个点的所有前驱节点都已被遍历时，这个点就可以被遍历。
+（可能不是前驱，但意思等同于前驱）
+例如，这张图中，1没有前驱节点。可以先遍历1，随后3没有别的前驱了，需要遍历3。此时点2的所有前驱都被遍历，可以遍历点2。此时4的所有前驱都被遍历，可以遍历点4。此时，5的前驱即3和4都被遍历，可以遍历5。本图的一种拓扑序即为1 3 2 4 5。
+一张图可能有多个拓扑序。例如将本图中1到3的边删掉，就可以有1 3 2 4 5和3 1 2 4 5两个拓扑序。
+回到本题。题目说的矛盾即为存在一个点无法被拓扑序遍历到。
+例如样例1的图，简单画一下就可以发现它没有任何一个节点是没有前驱节点的，拓扑序无从建起，自然是Invalid。
+那么推广一下，思路出来了：
+为图进行一次按照拓扑序的遍历，看看是否能够遍历到每一个点。如果不能遍历到每一个点，就是存在矛盾，输出Invalid。否则Valid。
+实现 用一个邻接表来存储有向图。
+const int MAXN=200005; vector&amp;lt;int&amp;gt; v[MAXN]; 首先输入$n$,$m$的值，并建图。
+注意到，判断一个点是否有前驱，可以通过存储其入度的数量来简单判断。如果它的入度数量为0，那么它没有前驱。所以定义一个数组来存储某个点的入度数量。
+cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m; for(int i=1;i&amp;lt;=m;i&#43;&#43;) { int a,b; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b; v[a].push_back(b); d[b]&#43;&#43;;//存入度数量的数组 int类型 } 看到刚才举的例子，当点1被遍历后，它下一个点可以选择遍历点2或者点3。但是点2还有别的前驱，点3没有了。所以遍历点3。
+那么这样，就可以通过bfs，将遍历到的点指向的点的入度都减去1，即”消去一条边“。当指向的点入度变成0的时候，入队，对它bfs。
+for(int i=1;i&amp;lt;=n;i&#43;&#43;)if(!d[i])q.push(i);//初始化 找拓扑序起点 while(!q.empty()) { int x=q.front();q.pop();//bfs cnt&#43;&#43;;//记录遍历了多少个点 for(int i=0;i&amp;lt;v[x].size();i&#43;&#43;) { int final=v[x][i]; d[final]--;//消边 if(!d[final])q.push(final);//如果指向的点没有别的前驱了就入队 } } 按照思路，我们统计一下遍历了多少个点，如果$cnt==n$，那么Valid。否则Invalid。'>
+<title>拓扑排序</title>
+
+
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+<script async src="https://cdn.staticfile.org/mermaid/8.6.4/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='拓扑排序'>
+<meta property='og:description' content='IAI727 202310月赛丙组T5 先修课程
+题目大意 一个有向图，有$n$个节点$m$条边，输入$n$和$m$和每条边的起点和终点。
+判断有向图的所有点是否都能在拓扑序中。能就输出Valid，否则输出Invalid。
+题解 看到原题有
+其中的第$i$条约束要求在学习第$y_i$ 门课程之前，必须先修完第$x_i$门课程。
+这样的优雅表述，判断可以用拓扑排序来解。
+拓扑排序是通过按照某个拓扑序的方法来遍历一张有向图。举个例子：
+这是一张有5个结点的有向图。遵循的原则是：
+当某个点的所有前驱节点都已被遍历时，这个点就可以被遍历。
+（可能不是前驱，但意思等同于前驱）
+例如，这张图中，1没有前驱节点。可以先遍历1，随后3没有别的前驱了，需要遍历3。此时点2的所有前驱都被遍历，可以遍历点2。此时4的所有前驱都被遍历，可以遍历点4。此时，5的前驱即3和4都被遍历，可以遍历5。本图的一种拓扑序即为1 3 2 4 5。
+一张图可能有多个拓扑序。例如将本图中1到3的边删掉，就可以有1 3 2 4 5和3 1 2 4 5两个拓扑序。
+回到本题。题目说的矛盾即为存在一个点无法被拓扑序遍历到。
+例如样例1的图，简单画一下就可以发现它没有任何一个节点是没有前驱节点的，拓扑序无从建起，自然是Invalid。
+那么推广一下，思路出来了：
+为图进行一次按照拓扑序的遍历，看看是否能够遍历到每一个点。如果不能遍历到每一个点，就是存在矛盾，输出Invalid。否则Valid。
+实现 用一个邻接表来存储有向图。
+const int MAXN=200005; vector&amp;lt;int&amp;gt; v[MAXN]; 首先输入$n$,$m$的值，并建图。
+注意到，判断一个点是否有前驱，可以通过存储其入度的数量来简单判断。如果它的入度数量为0，那么它没有前驱。所以定义一个数组来存储某个点的入度数量。
+cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m; for(int i=1;i&amp;lt;=m;i&#43;&#43;) { int a,b; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b; v[a].push_back(b); d[b]&#43;&#43;;//存入度数量的数组 int类型 } 看到刚才举的例子，当点1被遍历后，它下一个点可以选择遍历点2或者点3。但是点2还有别的前驱，点3没有了。所以遍历点3。
+那么这样，就可以通过bfs，将遍历到的点指向的点的入度都减去1，即”消去一条边“。当指向的点入度变成0的时候，入队，对它bfs。
+for(int i=1;i&amp;lt;=n;i&#43;&#43;)if(!d[i])q.push(i);//初始化 找拓扑序起点 while(!q.empty()) { int x=q.front();q.pop();//bfs cnt&#43;&#43;;//记录遍历了多少个点 for(int i=0;i&amp;lt;v[x].size();i&#43;&#43;) { int final=v[x][i]; d[final]--;//消边 if(!d[final])q.push(final);//如果指向的点没有别的前驱了就入队 } } 按照思路，我们统计一下遍历了多少个点，如果$cnt==n$，那么Valid。否则Invalid。'>
+<meta property='og:url' content='http://xfrozenx.top/post/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/'>
+<meta property='og:site_name' content='Frozen Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-11-06T22:26:37&#43;08:00'/><meta property='article:modified_time' content='2023-11-06T22:26:37&#43;08:00'/>
+<meta name="twitter:title" content="拓扑排序">
+<meta name="twitter:description" content="IAI727 202310月赛丙组T5 先修课程
+题目大意 一个有向图，有$n$个节点$m$条边，输入$n$和$m$和每条边的起点和终点。
+判断有向图的所有点是否都能在拓扑序中。能就输出Valid，否则输出Invalid。
+题解 看到原题有
+其中的第$i$条约束要求在学习第$y_i$ 门课程之前，必须先修完第$x_i$门课程。
+这样的优雅表述，判断可以用拓扑排序来解。
+拓扑排序是通过按照某个拓扑序的方法来遍历一张有向图。举个例子：
+这是一张有5个结点的有向图。遵循的原则是：
+当某个点的所有前驱节点都已被遍历时，这个点就可以被遍历。
+（可能不是前驱，但意思等同于前驱）
+例如，这张图中，1没有前驱节点。可以先遍历1，随后3没有别的前驱了，需要遍历3。此时点2的所有前驱都被遍历，可以遍历点2。此时4的所有前驱都被遍历，可以遍历点4。此时，5的前驱即3和4都被遍历，可以遍历5。本图的一种拓扑序即为1 3 2 4 5。
+一张图可能有多个拓扑序。例如将本图中1到3的边删掉，就可以有1 3 2 4 5和3 1 2 4 5两个拓扑序。
+回到本题。题目说的矛盾即为存在一个点无法被拓扑序遍历到。
+例如样例1的图，简单画一下就可以发现它没有任何一个节点是没有前驱节点的，拓扑序无从建起，自然是Invalid。
+那么推广一下，思路出来了：
+为图进行一次按照拓扑序的遍历，看看是否能够遍历到每一个点。如果不能遍历到每一个点，就是存在矛盾，输出Invalid。否则Valid。
+实现 用一个邻接表来存储有向图。
+const int MAXN=200005; vector&amp;lt;int&amp;gt; v[MAXN]; 首先输入$n$,$m$的值，并建图。
+注意到，判断一个点是否有前驱，可以通过存储其入度的数量来简单判断。如果它的入度数量为0，那么它没有前驱。所以定义一个数组来存储某个点的入度数量。
+cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m; for(int i=1;i&amp;lt;=m;i&#43;&#43;) { int a,b; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b; v[a].push_back(b); d[b]&#43;&#43;;//存入度数量的数组 int类型 } 看到刚才举的例子，当点1被遍历后，它下一个点可以选择遍历点2或者点3。但是点2还有别的前驱，点3没有了。所以遍历点3。
+那么这样，就可以通过bfs，将遍历到的点指向的点的入度都减去1，即”消去一条边“。当指向的点入度变成0的时候，入队，对它bfs。
+for(int i=1;i&amp;lt;=n;i&#43;&#43;)if(!d[i])q.push(i);//初始化 找拓扑序起点 while(!q.empty()) { int x=q.front();q.pop();//bfs cnt&#43;&#43;;//记录遍历了多少个点 for(int i=0;i&amp;lt;v[x].size();i&#43;&#43;) { int final=v[x][i]; d[final]--;//消边 if(!d[final])q.push(final);//如果指向的点没有别的前驱了就入队 } } 按照思路，我们统计一下遍历了多少个点，如果$cnt==n$，那么Valid。否则Invalid。">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu56f4bf5aac743e130fd779e2575843c4_43701_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Frozen Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/oi/" >
+                OI
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Nov 06, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p><a class="link" href="https://iai.sh.cn/problem/727"  target="_blank" rel="noopener"
+    >IAI727 202310月赛丙组T5 先修课程</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>一个有向图，有$n$个节点$m$条边，输入$n$和$m$和每条边的起点和终点。</p>
+<p>判断有向图的所有点是否都能在拓扑序中。能就输出Valid，否则输出Invalid。</p>
+<h2 id="题解">题解</h2>
+<p>看到原题有</p>
+<blockquote>
+<p>其中的第$i$条约束要求在学习第$y_i$ 门课程之前，必须先修完第$x_i$门课程。</p>
+</blockquote>
+<p>这样的优雅表述，判断可以用拓扑排序来解。</p>
+<p>拓扑排序是通过按照某个拓扑序的方法来遍历一张有向图。举个例子：</p>
+<p><a class="link" href="https://imgse.com/i/pil0MIH"  target="_blank" rel="noopener"
+    ><img src="https://z1.ax1x.com/2023/11/06/pil0MIH.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="pil0MIH.png"
+	
+	
+></a></p>
+<p>这是一张有5个结点的有向图。遵循的原则是：</p>
+<blockquote>
+<p>当某个点的所有前驱节点都已被遍历时，这个点就可以被遍历。</p>
+</blockquote>
+<p>（可能不是前驱，但意思等同于前驱）</p>
+<p>例如，这张图中，1没有前驱节点。可以先遍历1，随后3没有别的前驱了，需要遍历3。此时点2的所有前驱都被遍历，可以遍历点2。此时4的所有前驱都被遍历，可以遍历点4。此时，5的前驱即3和4都被遍历，可以遍历5。本图的一种拓扑序即为1 3 2 4 5。</p>
+<p>一张图可能有多个拓扑序。例如将本图中1到3的边删掉，就可以有1 3 2 4 5和3 1 2 4 5两个拓扑序。</p>
+<p>回到本题。题目说的矛盾即为存在一个点无法被拓扑序遍历到。</p>
+<p>例如样例1的图，简单画一下就可以发现它没有任何一个节点是没有前驱节点的，拓扑序无从建起，自然是Invalid。</p>
+<p>那么推广一下，思路出来了：</p>
+<p><strong>为图进行一次按照拓扑序的遍历，看看是否能够遍历到每一个点。如果不能遍历到每一个点，就是存在矛盾，输出Invalid。否则Valid。</strong></p>
+<h2 id="实现">实现</h2>
+<p>用一个邻接表来存储有向图。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MAXN<span style="color:#f92672">=</span><span style="color:#ae81ff">200005</span>;
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v[MAXN];
+</span></span></code></pre></div><p>首先输入$n$,$m$的值，并建图。</p>
+<p>注意到，判断一个点是否有前驱，可以通过存储其入度的数量来简单判断。如果它的入度数量为0，那么它没有前驱。所以定义一个数组来存储某个点的入度数量。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>cin<span style="color:#f92672">&gt;&gt;</span>n<span style="color:#f92672">&gt;&gt;</span>m;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>m;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> a,b;
+</span></span><span style="display:flex;"><span>	cin<span style="color:#f92672">&gt;&gt;</span>a<span style="color:#f92672">&gt;&gt;</span>b;
+</span></span><span style="display:flex;"><span>	v[a].push_back(b);
+</span></span><span style="display:flex;"><span>	d[b]<span style="color:#f92672">++</span>;<span style="color:#75715e">//存入度数量的数组 int类型
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>看到刚才举的例子，当点1被遍历后，它下一个点可以选择遍历点2或者点3。但是点2还有别的前驱，点3没有了。所以遍历点3。</p>
+<p>那么这样，就可以通过bfs，将遍历到的点指向的点的入度都减去1，即”消去一条边“。当指向的点入度变成0的时候，入队，对它bfs。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>)<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>d[i])q.push(i);<span style="color:#75715e">//初始化 找拓扑序起点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>q.front();q.pop();<span style="color:#75715e">//bfs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	cnt<span style="color:#f92672">++</span>;<span style="color:#75715e">//记录遍历了多少个点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>v[x].size();i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> <span style="color:#66d9ef">final</span><span style="color:#f92672">=</span>v[x][i];
+</span></span><span style="display:flex;"><span>		d[<span style="color:#66d9ef">final</span>]<span style="color:#f92672">--</span>;<span style="color:#75715e">//消边
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>d[<span style="color:#66d9ef">final</span>])q.push(<span style="color:#66d9ef">final</span>);<span style="color:#75715e">//如果指向的点没有别的前驱了就入队
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>按照思路，我们统计一下遍历了多少个点，如果$cnt==n$，那么Valid。否则Invalid。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>cout<span style="color:#f92672">&lt;&lt;</span>((cnt<span style="color:#f92672">!=</span>n)<span style="color:#f92672">?</span><span style="color:#e6db74">&#34;Invalid&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Valid&#34;</span>);
+</span></span></code></pre></div><p>AC Code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">//20231106 @ iai.sh.cn
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MAXN<span style="color:#f92672">=</span><span style="color:#ae81ff">200005</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n,m,d[MAXN],cnt;
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v[MAXN];
+</span></span><span style="display:flex;"><span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> q;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	ios<span style="color:#f92672">::</span>sync_with_stdio(<span style="color:#ae81ff">0</span>);cin.tie(<span style="color:#ae81ff">0</span>);cout.tie(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// freopen(&#34;1.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	cin<span style="color:#f92672">&gt;&gt;</span>n<span style="color:#f92672">&gt;&gt;</span>m;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>m;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> a,b;
+</span></span><span style="display:flex;"><span>		cin<span style="color:#f92672">&gt;&gt;</span>a<span style="color:#f92672">&gt;&gt;</span>b;
+</span></span><span style="display:flex;"><span>		v[a].push_back(b);
+</span></span><span style="display:flex;"><span>		d[b]<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;i<span style="color:#f92672">&lt;=</span>n;i<span style="color:#f92672">++</span>)<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>d[i])q.push(i);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span>(<span style="color:#f92672">!</span>q.empty())
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span>q.front();q.pop();
+</span></span><span style="display:flex;"><span>		cnt<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>v[x].size();i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">int</span> <span style="color:#66d9ef">final</span><span style="color:#f92672">=</span>v[x][i];
+</span></span><span style="display:flex;"><span>			d[<span style="color:#66d9ef">final</span>]<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>d[<span style="color:#66d9ef">final</span>])q.push(<span style="color:#66d9ef">final</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>((cnt<span style="color:#f92672">!=</span>n)<span style="color:#f92672">?</span><span style="color:#e6db74">&#34;Invalid&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;Valid&#34;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"requiredMeta":["name","email"],"serverURL":"https://comment.xfrozenx.top/"});
+</script>
+
+    
+
+    <footer class="site-footer">
+
+
+    <section class="copyright">
+        &copy; 
+        
+        2023 Frozen Blog
+    </section>
+        <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>	
+
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
