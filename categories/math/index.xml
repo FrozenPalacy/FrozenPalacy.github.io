@@ -24,9 +24,9 @@
 &lt;p&gt;所有幂函数一定过定点$(1,1)$.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;对于$y=x^k$，在$(0,+\infin)$上均有定义。&lt;/p&gt;
+&lt;p&gt;对于$y=x^k$，在$(0,+\infty)$上均有定义。&lt;/p&gt;
 &lt;p&gt;$k&amp;lt;0$时，在$x=0$上无意义。&lt;/p&gt;
-&lt;p&gt;其余地按情况判定在$(-\infin,0)$上是否有意义。&lt;/p&gt;
+&lt;p&gt;其余地按情况判定在$(-\infty,0)$上是否有意义。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -34,7 +34,7 @@
 &lt;p&gt;指数函数&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;对于函数$f(x)=a^x(a&amp;gt;0,a\neq1)$，$D=R$，$f(x)=(0,+\infin)$，非奇非偶，过定点$(0,1)$。&lt;/p&gt;
+&lt;p&gt;对于函数$f(x)=a^x(a&amp;gt;0,a\neq1)$，$D=R$，$f(x)=(0,+\infty)$，非奇非偶，过定点$(0,1)$。&lt;/p&gt;
 &lt;p&gt;当$a&amp;gt;1$时，函数在$R$上增。$a&amp;lt;1$时，函数在$R$上减。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -42,14 +42,14 @@
 &lt;li&gt;
 &lt;p&gt;对数函数&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;对于函数$f(x)=\log_ax(a&amp;gt;0,a\neq1)$，$D=(0,+\infin)$，$f(x)\isin R$，非奇非偶，过定点$(1,0)$。&lt;/li&gt;
-&lt;li&gt;当$a&amp;gt;1$时，在$R$上单调增。$a\isin(0,1)$时，在$R$上单调减。&lt;/li&gt;
+&lt;li&gt;对于函数$f(x)=\log_ax(a&amp;gt;0,a\neq1)$，$D=(0,+\infty)$，$f(x)\in R$，非奇非偶，过定点$(1,0)$。&lt;/li&gt;
+&lt;li&gt;当$a&amp;gt;1$时，在$R$上单调增。$a\in(0,1)$时，在$R$上单调减。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;eg:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;2025虹口一模 函数$y=\ln\frac{x}{x-1}$的定义域是_____。&lt;/p&gt;
-&lt;p&gt;求解$\frac{x}{x-1}&amp;gt;0$，则$x\isin(-\infin,0)\cup(1,+\infin)$，即$D=(-\infin,0)\cup(1,+\infin)$。&lt;/p&gt;
+&lt;p&gt;求解$\frac{x}{x-1}&amp;gt;0$，则$x\in(-\infty,0)\cup(1,+\infty)$，即$D=(-\infty,0)\cup(1,+\infty)$。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;2025虹口一模 设$a&amp;gt;0$且$a\neq1$，则函数$y=2+\log_ax$图像恒过的定点为______&lt;/p&gt;
@@ -84,7 +84,7 @@
 &lt;li&gt;
 &lt;p&gt;单调性&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;$\forall x_1&amp;lt;x_2\isin D$，
+&lt;li&gt;$\forall x_1&amp;lt;x_2\in D$，
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;若$f(x_1)\leq f(x_2)$，则$f(x)$为$D$上的增函数。&lt;/p&gt;
@@ -106,9 +106,9 @@
 &lt;li&gt;
 &lt;p&gt;三角函数&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;对于$f(x)=\sin x$，$D=R$，$f(x)\isin[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\frac\pi2,2k\pi+\frac\pi2]$上增，在$[2k\pi+\frac\pi2,2k\pi+\frac32\pi]$上减，奇函数，对称轴$x=k\pi+\frac\pi2$，对称中心$(k\pi,0)$。&lt;/li&gt;
-&lt;li&gt;对于$f(x)=\cos x$，$D=R$，$f(x)\isin[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\pi,2k\pi]$上增，在$[2k\pi,2k\pi+\pi]$上减，偶函数，对称轴$x=k\pi$，对称中心$(k\pi+\frac\pi2,0)$。&lt;/li&gt;
-&lt;li&gt;对于$f(x)=\tan x$，$D={x|x\neq k\pi+\frac\pi2,k\isin Z}$，$f(x)\isin R$，$T_{\min}=\pi$，在$(k\pi-\frac\pi2,k\pi+\frac\pi2)$上增，无减区间，奇函数，无对称轴，对称中心$(\frac{k\pi}{2},0)$。&lt;/li&gt;
+&lt;li&gt;对于$f(x)=\sin x$，$D=R$，$f(x)\in[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\frac\pi2,2k\pi+\frac\pi2]$上增，在$[2k\pi+\frac\pi2,2k\pi+\frac32\pi]$上减，奇函数，对称轴$x=k\pi+\frac\pi2$，对称中心$(k\pi,0)$。&lt;/li&gt;
+&lt;li&gt;对于$f(x)=\cos x$，$D=R$，$f(x)\in[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\pi,2k\pi]$上增，在$[2k\pi,2k\pi+\pi]$上减，偶函数，对称轴$x=k\pi$，对称中心$(k\pi+\frac\pi2,0)$。&lt;/li&gt;
+&lt;li&gt;对于$f(x)=\tan x$，$D={x|x\neq k\pi+\frac\pi2,k\in Z}$，$f(x)\in R$，$T_{\min}=\pi$，在$(k\pi-\frac\pi2,k\pi+\frac\pi2)$上增，无减区间，奇函数，无对称轴，对称中心$(\frac{k\pi}{2},0)$。&lt;/li&gt;
 &lt;li&gt;对于$y=A\sin(\omega x+\varphi)$，$A$是振幅，$\omega$是圆频率，$\varphi$是初始相位。&lt;/li&gt;
 &lt;li&gt;辅助角公式$a\sin x+b\cos x=\sqrt{a^2+b^2}\sin(x+\arctan\frac ba)$。&lt;/li&gt;
 &lt;/ol&gt;
@@ -118,7 +118,7 @@
 &lt;p&gt;2025虹口一模 对$f(x)=\sin\omega x,x&amp;gt;0$，当$T_{min}=2\pi$时，求$y=f(x)+\cos x$在$[0,\frac\pi2]$上的最大值。&lt;/p&gt;
 &lt;p&gt;$T=\frac{2\pi}{\omega}=2\pi\Rightarrow\omega=1$，&lt;/p&gt;
 &lt;p&gt;$y=\sin x+\cos x=\sqrt2\sin(x+\frac\pi4)$。&lt;/p&gt;
-&lt;p&gt;所以$x+\frac\pi4\isin[\frac\pi4,\frac34\pi]$。&lt;/p&gt;
+&lt;p&gt;所以$x+\frac\pi4\in[\frac\pi4,\frac34\pi]$。&lt;/p&gt;
 &lt;p&gt;当$x+\frac\pi4=\frac\pi2$时，$x=\frac\pi4$，$y_{\max}=2$。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
@@ -132,14 +132,9 @@
 &lt;li&gt;
 &lt;p&gt;2025虹口一模 已知$f(x)=\begin{cases}x^2-x,x\geq0\\f(-x),x&amp;lt;0\end{cases}$，则$f(x)\leq6$的解集为______&lt;/p&gt;
 &lt;p&gt;分别针对$x\geq0$时和$x&amp;lt;0$时求解。&lt;/p&gt;
-&lt;p&gt;当$x\geq0$时，$f(x)\leq6\Rightarrow x\isin[0,3]$。&lt;/p&gt;
-&lt;p&gt;当$x&amp;lt;0$时，$f(x)\leq6\Rightarrow x\isin[-3,0)$&lt;/p&gt;
+&lt;p&gt;当$x\geq0$时，$f(x)\leq6\Rightarrow x\in[0,3]$。&lt;/p&gt;
+&lt;p&gt;当$x&amp;lt;0$时，$f(x)\leq6\Rightarrow x\in[-3,0)$&lt;/p&gt;
 &lt;p&gt;两个解集取并，答案为$[-3,3]$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
