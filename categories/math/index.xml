@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Math on Frozen Blog</title>
+        <link>http://xfrozenx.top/categories/math/</link>
+        <description>Recent content in Math on Frozen Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Fri, 03 Jan 2025 19:05:03 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/math/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hmath Function</title>
+        <link>http://xfrozenx.top/post/hmath-function/</link>
+        <pubDate>Fri, 03 Jan 2025 19:05:03 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/post/hmath-function/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;基本定义&lt;/p&gt;
+&lt;p&gt;给定一个数集$A$，假设其中的元素为$x$，对$A$中的元素$x$施加对应法则$f$，记作$f(x)$，得到另一数集$B$，假设$B$中的元素为$y$，则$y$与$x$之间的等量关系可以用$y=f(x)$表示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;幂函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;所有幂函数一定过定点$(1,1)$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于$y=x^k$，在$(0,+\infin)$上均有定义。&lt;/p&gt;
+&lt;p&gt;$k&amp;lt;0$时，在$x=0$上无意义。&lt;/p&gt;
+&lt;p&gt;其余地按情况判定在$(-\infin,0)$上是否有意义。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指数函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;对于函数$f(x)=a^x(a&amp;gt;0,a\neq1)$，$D=R$，$f(x)=(0,+\infin)$，非奇非偶，过定点$(0,1)$。&lt;/p&gt;
+&lt;p&gt;当$a&amp;gt;1$时，函数在$R$上增。$a&amp;lt;1$时，函数在$R$上减。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对数函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于函数$f(x)=\log_ax(a&amp;gt;0,a\neq1)$，$D=(0,+\infin)$，$f(x)\isin R$，非奇非偶，过定点$(1,0)$。&lt;/li&gt;
+&lt;li&gt;当$a&amp;gt;1$时，在$R$上单调增。$a\isin(0,1)$时，在$R$上单调减。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;eg:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2025虹口一模 函数$y=\ln\frac{x}{x-1}$的定义域是_____。&lt;/p&gt;
+&lt;p&gt;求解$\frac{x}{x-1}&amp;gt;0$，则$x\isin(-\infin,0)\cup(1,+\infin)$，即$D=(-\infin,0)\cup(1,+\infin)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2025虹口一模 设$a&amp;gt;0$且$a\neq1$，则函数$y=2+\log_ax$图像恒过的定点为______&lt;/p&gt;
+&lt;p&gt;$y=\log_ax$过定点$(1,0)$，此函数将其向上平移$2$，故过定点$(1,2)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;奇偶性判定&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;检查$D$是否关于原点对称。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;检查$f(x)=\pm f(x)$是否成立（定义）。&lt;/p&gt;
+&lt;p&gt;对非奇非偶函数的证明可以举反例。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;偶$\pm$偶=偶，奇$\times$偶=奇，偶$\times$偶=偶&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;奇偶性的性质&lt;/p&gt;
+&lt;p&gt;若奇函数$y=f(x)$在$x=0$上有定义，则$f(0)=0$。&lt;/p&gt;
+&lt;p&gt;证明时需注意：1.要在$x=0$上有定义；2.$f(0)=0$是$f(x)$为奇函数的必要非充分条件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;有条件$f(x+T)=f(x)$的，可知$f(x)$存在周期性，$T$为函数的一个周期，但不一定是最小正周期。&lt;/p&gt;
+&lt;p&gt;有条件$f(x+a)=f(b-x)$的，$f(x)$图像关于$x=\frac{a+b}2$对称。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;单调性&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$\forall x_1&amp;lt;x_2\isin D$，
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;若$f(x_1)\leq f(x_2)$，则$f(x)$为$D$上的增函数。&lt;/p&gt;
+&lt;p&gt;$f(x_1)&amp;lt;f(x_2)$，则$f(x)$在$D$上严格增。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;反之减函数、严格减（偷懒不写了）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;复合函数的单调性：同增异减。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;零点存在性定理：&lt;/p&gt;
+&lt;p&gt;当$y=f(x)$在$D=[a,b]$上连续，$f(a)\times f(b)&amp;lt;0$，则$f(x)$在$[a,b]$上&lt;strong&gt;至少&lt;/strong&gt;存在一个实数$c$，使得$f(c)=0$。&lt;/p&gt;
+&lt;p&gt;$c$是$f(x)$的一个零点。（零点&lt;strong&gt;不&lt;/strong&gt;是$(c,0)$！！！！！）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三角函数&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于$f(x)=\sin x$，$D=R$，$f(x)\isin[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\frac\pi2,2k\pi+\frac\pi2]$上增，在$[2k\pi+\frac\pi2,2k\pi+\frac32\pi]$上减，奇函数，对称轴$x=k\pi+\frac\pi2$，对称中心$(k\pi,0)$。&lt;/li&gt;
+&lt;li&gt;对于$f(x)=\cos x$，$D=R$，$f(x)\isin[-1,1]$，$T_{\min}=2\pi$，在$[2k\pi-\pi,2k\pi]$上增，在$[2k\pi,2k\pi+\pi]$上减，偶函数，对称轴$x=k\pi$，对称中心$(k\pi+\frac\pi2,0)$。&lt;/li&gt;
+&lt;li&gt;对于$f(x)=\tan x$，$D={x|x\neq k\pi+\frac\pi2,k\isin Z}$，$f(x)\isin R$，$T_{\min}=\pi$，在$(k\pi-\frac\pi2,k\pi+\frac\pi2)$上增，无减区间，奇函数，无对称轴，对称中心$(\frac{k\pi}{2},0)$。&lt;/li&gt;
+&lt;li&gt;对于$y=A\sin(\omega x+\varphi)$，$A$是振幅，$\omega$是圆频率，$\varphi$是初始相位。&lt;/li&gt;
+&lt;li&gt;辅助角公式$a\sin x+b\cos x=\sqrt{a^2+b^2}\sin(x+\arctan\frac ba)$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;eg:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2025虹口一模 对$f(x)=\sin\omega x,x&amp;gt;0$，当$T_{min}=2\pi$时，求$y=f(x)+\cos x$在$[0,\frac\pi2]$上的最大值。&lt;/p&gt;
+&lt;p&gt;$T=\frac{2\pi}{\omega}=2\pi\Rightarrow\omega=1$，&lt;/p&gt;
+&lt;p&gt;$y=\sin x+\cos x=\sqrt2\sin(x+\frac\pi4)$。&lt;/p&gt;
+&lt;p&gt;所以$x+\frac\pi4\isin[\frac\pi4,\frac34\pi]$。&lt;/p&gt;
+&lt;p&gt;当$x+\frac\pi4=\frac\pi2$时，$x=\frac\pi4$，$y_{\max}=2$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分段函数&lt;/p&gt;
+&lt;p&gt;看着解就行了（）。&lt;/p&gt;
+&lt;p&gt;eg:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;2025虹口一模 已知$f(x)=\begin{cases}x^2-x,x\geq0\\f(-x),x&amp;lt;0\end{cases}$，则$f(x)\leq6$的解集为______&lt;/p&gt;
+&lt;p&gt;分别针对$x\geq0$时和$x&amp;lt;0$时求解。&lt;/p&gt;
+&lt;p&gt;当$x\geq0$时，$f(x)\leq6\Rightarrow x\isin[0,3]$。&lt;/p&gt;
+&lt;p&gt;当$x&amp;lt;0$时，$f(x)\leq6\Rightarrow x\isin[-3,0)$&lt;/p&gt;
+&lt;p&gt;两个解集取并，答案为$[-3,3]$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
