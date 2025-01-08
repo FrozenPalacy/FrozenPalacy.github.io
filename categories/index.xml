@@ -6,12 +6,20 @@
         <description>Recent content in Categories on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 03 Jan 2025 19:05:03 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jan 2025 20:24:47 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>High School</title>
         <link>http://xfrozenx.top/categories/high-school/</link>
-        <pubDate>Fri, 03 Jan 2025 19:05:03 +0800</pubDate>
+        <pubDate>Wed, 08 Jan 2025 20:24:47 +0800</pubDate>
         
         <guid>http://xfrozenx.top/categories/high-school/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Politics</title>
+        <link>http://xfrozenx.top/categories/politics/</link>
+        <pubDate>Wed, 08 Jan 2025 20:24:47 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/categories/politics/</guid>
         <description></description>
         </item>
         <item>
@@ -20,14 +28,6 @@
         <pubDate>Fri, 03 Jan 2025 19:05:03 +0800</pubDate>
         
         <guid>http://xfrozenx.top/categories/math/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Politics</title>
-        <link>http://xfrozenx.top/categories/politics/</link>
-        <pubDate>Tue, 05 Nov 2024 19:52:43 +0800</pubDate>
-        
-        <guid>http://xfrozenx.top/categories/politics/</guid>
         <description></description>
         </item>
         <item>
