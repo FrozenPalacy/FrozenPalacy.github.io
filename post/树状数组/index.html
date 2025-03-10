@@ -30,7 +30,8 @@ void add(int p, int k){ while (p &amp;lt;= n){ f[p] &#43;= k; p &#43;= lowbit(p)
 int sum(int p){ int ans = 0; while (p &amp;gt; 0){ sum &#43;= f[p]; p -= lowbit(p); } } //求p的前綴和 求区间$[L,R]$的和，同前缀和一样，用如下方法求得即可：'>
 <title>树状数组</title>
 
-
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 
 <script type="text/javascript"
         async

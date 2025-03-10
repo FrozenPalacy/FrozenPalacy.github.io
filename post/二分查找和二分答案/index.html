@@ -6,7 +6,8 @@
 初始赋值：$l$是一个不满足条件的位置，$r$是一个满足条件的位置。 当$l&#43;1&amp;lt;r$，即$l$和$r$不相邻时，计算中间端点$mid=(l&#43;r)/2=l&#43;(r-l)/2$. 若$mid$满足条件，设$r=mid$，继续搜索 若$mid$不满足条件，设$l=mid$，继续搜索 当$l&#43;1=r$时，$r$为第一个满足条件的位置。 模板代码 while (l &#43; 1 &amp;lt; r) { int mid = (l &#43; r) / 2; if (a[mid] &amp;gt;= k) r = mid; else l = mid; } 二分答案'>
 <title>二分查找和二分答案</title>
 
-
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 
 <script type="text/javascript"
         async

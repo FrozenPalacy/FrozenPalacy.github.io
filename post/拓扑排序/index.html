@@ -25,7 +25,8 @@ cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m; for(int i=1;i&amp;lt;=m;i&#43;&#43;) { in
 for(int i=1;i&amp;lt;=n;i&#43;&#43;)if(!d[i])q.push(i);//初始化 找拓扑序起点 while(!q.empty()) { int x=q.front();q.pop();//bfs cnt&#43;&#43;;//记录遍历了多少个点 for(int i=0;i&amp;lt;v[x].size();i&#43;&#43;) { int final=v[x][i]; d[final]--;//消边 if(!d[final])q.push(final);//如果指向的点没有别的前驱了就入队 } } 按照思路，我们统计一下遍历了多少个点，如果$cnt==n$，那么Valid。否则Invalid。'>
 <title>拓扑排序</title>
 
-
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
 
 <script type="text/javascript"
         async
