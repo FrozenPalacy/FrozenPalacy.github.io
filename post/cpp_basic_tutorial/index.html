@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='居然要我这种水平的人来写一份C&#43;&#43;入门教程，属实是有点抬举我了。
+不妨先让你有一处宝地写代码？ 请参见https://www.bilibili.com/video/BV12DYqzUEin/，安装一个简易的轻量化的C&#43;&#43;编辑器及编译器的集成环境（C&#43;&#43; IDE)。此教程中略过不表。
+从基本的顺序结构开始吧！ 程序的运行起始于一个整型的主函数 (main()) 。在主函数中的代码会被逐行执行。你也可以在完整的代码文件中声明一些子函数，并在主函数中予以调用。声明主函数的办法为：
+int main() { //在这个位置写你的代码 return 0; } 从这一段代码来看，已经出现了多个问题。我在此试着逐行解释。
+变量基本类型 不同于Python, C&#43;&#43;在声明变量时严格要求要声明变量类型。声明为整数类型的变量不可以存放浮点数或小数，声明为字符型的变量不可以存放整数或小数。
+我试着列一张表格，来展示你可能会用到的一些。
+类型 名称 值域 / 精度 占用空间 (Byte) bool bool / 布尔值 ${0,1}$ 1 char character / 字符型 所有字符 1 int interger / 整数型 $[-2^{31},2^{31}-1]$ 4 float float / 浮点数 一般保证小数点后8位精确 4 double double / 双精度浮点数 一般保证小数点后16位精确 8 (Ref: Type - cppreference.com)
+除此之外，对于int类型，还有不同位宽的short int, long int，及是否留有符号位的signed int, unsigned int等多种子类型。至于其原理，详见：变量 - OI Wiki.'>
+<title>Cpp Basic Tutorial</title>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css">
+
+<script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+<script async src="https://cdn.staticfile.org/mermaid/8.6.4/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="/scss/style.min.5be32ca3f6e1a997c75795c4359147cc6d4fbd34948c0acd51e31d237033978a.css"><meta property='og:title' content='Cpp Basic Tutorial'>
+<meta property='og:description' content='居然要我这种水平的人来写一份C&#43;&#43;入门教程，属实是有点抬举我了。
+不妨先让你有一处宝地写代码？ 请参见https://www.bilibili.com/video/BV12DYqzUEin/，安装一个简易的轻量化的C&#43;&#43;编辑器及编译器的集成环境（C&#43;&#43; IDE)。此教程中略过不表。
+从基本的顺序结构开始吧！ 程序的运行起始于一个整型的主函数 (main()) 。在主函数中的代码会被逐行执行。你也可以在完整的代码文件中声明一些子函数，并在主函数中予以调用。声明主函数的办法为：
+int main() { //在这个位置写你的代码 return 0; } 从这一段代码来看，已经出现了多个问题。我在此试着逐行解释。
+变量基本类型 不同于Python, C&#43;&#43;在声明变量时严格要求要声明变量类型。声明为整数类型的变量不可以存放浮点数或小数，声明为字符型的变量不可以存放整数或小数。
+我试着列一张表格，来展示你可能会用到的一些。
+类型 名称 值域 / 精度 占用空间 (Byte) bool bool / 布尔值 ${0,1}$ 1 char character / 字符型 所有字符 1 int interger / 整数型 $[-2^{31},2^{31}-1]$ 4 float float / 浮点数 一般保证小数点后8位精确 4 double double / 双精度浮点数 一般保证小数点后16位精确 8 (Ref: Type - cppreference.com)
+除此之外，对于int类型，还有不同位宽的short int, long int，及是否留有符号位的signed int, unsigned int等多种子类型。至于其原理，详见：变量 - OI Wiki.'>
+<meta property='og:url' content='http://xfrozenx.top/post/cpp_basic_tutorial/'>
+<meta property='og:site_name' content='Frozen Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-10-10T23:45:00&#43;08:00'/><meta property='article:modified_time' content='2025-10-10T23:45:00&#43;08:00'/>
+<meta name="twitter:title" content="Cpp Basic Tutorial">
+<meta name="twitter:description" content="居然要我这种水平的人来写一份C&#43;&#43;入门教程，属实是有点抬举我了。
+不妨先让你有一处宝地写代码？ 请参见https://www.bilibili.com/video/BV12DYqzUEin/，安装一个简易的轻量化的C&#43;&#43;编辑器及编译器的集成环境（C&#43;&#43; IDE)。此教程中略过不表。
+从基本的顺序结构开始吧！ 程序的运行起始于一个整型的主函数 (main()) 。在主函数中的代码会被逐行执行。你也可以在完整的代码文件中声明一些子函数，并在主函数中予以调用。声明主函数的办法为：
+int main() { //在这个位置写你的代码 return 0; } 从这一段代码来看，已经出现了多个问题。我在此试着逐行解释。
+变量基本类型 不同于Python, C&#43;&#43;在声明变量时严格要求要声明变量类型。声明为整数类型的变量不可以存放浮点数或小数，声明为字符型的变量不可以存放整数或小数。
+我试着列一张表格，来展示你可能会用到的一些。
+类型 名称 值域 / 精度 占用空间 (Byte) bool bool / 布尔值 ${0,1}$ 1 char character / 字符型 所有字符 1 int interger / 整数型 $[-2^{31},2^{31}-1]$ 4 float float / 浮点数 一般保证小数点后8位精确 4 double double / 双精度浮点数 一般保证小数点后16位精确 8 (Ref: Type - cppreference.com)
+除此之外，对于int类型，还有不同位宽的short int, long int，及是否留有符号位的signed int, unsigned int等多种子类型。至于其原理，详见：变量 - OI Wiki.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu56f4bf5aac743e130fd779e2575843c4_43701_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Frozen Blog</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/oi/" >
+                OI
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/cpp_basic_tutorial/">Cpp Basic Tutorial</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 10, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>居然要我这种水平的人来写一份C++入门教程，属实是有点抬举我了。</p>
+<h1 id="不妨先让你有一处宝地写代码">不妨先让你有一处宝地写代码？</h1>
+<p>请参见<a class="link" href="https://www.bilibili.com/video/BV12DYqzUEin/"  target="_blank" rel="noopener"
+    >https://www.bilibili.com/video/BV12DYqzUEin/</a>，安装一个简易的轻量化的C++编辑器及编译器的集成环境（C++ IDE)。此教程中略过不表。</p>
+<h1 id="从基本的顺序结构开始吧">从基本的顺序结构开始吧！</h1>
+<p>程序的运行起始于一个<strong>整型的主函数 (main())</strong> 。在主函数中的代码会被逐行执行。你也可以在完整的代码文件中声明一些子函数，并在主函数中予以调用。声明主函数的办法为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//在这个位置写你的代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>从这一段代码来看，已经出现了多个问题。我在此试着逐行解释。</p>
+<h2 id="变量基本类型">变量基本类型</h2>
+<p>不同于Python, C++在声明变量时严格要求要声明变量类型。声明为整数类型的变量不可以存放浮点数或小数，声明为字符型的变量不可以存放整数或小数。</p>
+<p>我试着列一张表格，来展示你可能会用到的一些。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名称</th>
+<th>值域 / 精度</th>
+<th>占用空间 (Byte)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>bool / 布尔值</td>
+<td>${0,1}$</td>
+<td>1</td>
+</tr>
+<tr>
+<td>char</td>
+<td>character / 字符型</td>
+<td>所有字符</td>
+<td>1</td>
+</tr>
+<tr>
+<td>int</td>
+<td>interger / 整数型</td>
+<td>$[-2^{31},2^{31}-1]$</td>
+<td>4</td>
+</tr>
+<tr>
+<td>float</td>
+<td>float / 浮点数</td>
+<td>一般保证小数点后8位精确</td>
+<td>4</td>
+</tr>
+<tr>
+<td>double</td>
+<td>double / 双精度浮点数</td>
+<td>一般保证小数点后16位精确</td>
+<td>8</td>
+</tr>
+</tbody>
+</table></div>
+<p>(Ref: <a class="link" href="https://cppreference.com/w/cpp/language/type-id.html"  target="_blank" rel="noopener"
+    >Type - cppreference.com</a>)</p>
+<p>除此之外，对于<code>int</code>类型，还有不同<strong>位宽</strong>的short int, long int，及是否留有符号位的signed int, unsigned int等多种子类型。至于其原理，详见：<a class="link" href="https://oi-wiki.org/lang/var/"  target="_blank" rel="noopener"
+    >变量 - OI Wiki</a>.</p>
+<p>不同的变量将占用不同的内存空间，在写代码时请注意根据数据范围，尽可能地少使用内存空间。当然打比赛除外，打比赛要的就是冗余保证过过过就好了。</p>
+<p>回到主函数上。当我们为一个函数赋予这样的类型，是对其<strong>返回值的类型</strong>存在要求。例如，当我们在主函数中调用一个子函数，我们可以决定子函数返回一个怎样的值。对于主函数，一般返回0，所以在代码块最后存在一个return 0。<em>（这里具体向谁返回我也没太研究清楚，可能是操作系统？)</em></p>
+<h2 id="注释">注释</h2>
+<p>C++的注释分为单行和多行注释，注释中的内容不会被执行，也不参与程序编译。你可以在注释里放一尊大佛，祈祷你的程序能够跑起来。或者骂骂人也行，但小心被发现。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//这是单行注释
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		这是多行注释，以斜杠和星号开头，以星号和斜杠结尾。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		注释中的内容都不会被执行。
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	*/</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>好了！现在你已经可以声明变量，完成一些基本的运算，例如加减乘除。比方说：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> a,b,c; <span style="color:#75715e">//C++中，声明同一类型的多个变量时，可以用逗号分隔开
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>; <span style="color:#75715e">//对多个变量赋值时，也可以用逗号
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	c<span style="color:#f92672">=</span>a<span style="color:#f92672">+</span>b;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>但是当你运行一下程序，你会发现你什么都得不到。这是怎么回事？</p>
+<p>你突然发现，你只让程序完成了计算，但是并没有命令程序把答案告诉你。换言之，程序没有告诉你运算结果的义务。于是你打算动用你作为统治者的强权暴力手段，让它告诉你运算结果。</p>
+<p>你又发现，你不能跟他讲“快把答案告诉我！”，并且你不知道怎么逼迫他告诉你答案。</p>
+<h2 id="输入输出">输入/输出</h2>
+<p>C++有两种主要的输入输出方式，我们分别介绍。</p>
+<p>(Ref. <a class="link" href="https://oi-wiki.org/lang/basic/#scanf-%E4%B8%8E-printf"  target="_blank" rel="noopener"
+    >C++ 语法基础 - OI Wiki</a>)</p>
+<h3 id="格式化输入输出-scanfprintf">格式化输入输出 (scanf/printf)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> a,b,c;
+</span></span><span style="display:flex;"><span>	scanf(<span style="color:#e6db74">&#34;%d%d%d&#34;</span>,<span style="color:#f92672">&amp;</span>a,<span style="color:#f92672">&amp;</span>b,<span style="color:#f92672">&amp;</span>c);
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%d %d %d&#34;</span>,a,b,c);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在<code>scanf</code>的使用上，需要注意，必须在后面的变量前加一个<code>&amp;</code>。这是由于<code>scanf</code>接收的参数是一个在内存中的地址。</p>
+<p>在两行代码中通用的<code>%d</code>，称为<strong>类型标识符</strong>，除了<code>%d</code>之外，还有<code>%s</code>,<code>%c</code>,<code>%lf</code>等等。详见上文中本部分的Reference。</p>
+<p>printf中，如果你不想要输出一个变量，你只需直接在引号中写上你想要输出的内容即可。类型标识符占据的位置，会在字符串之外的逗号按顺序输出。例如，你可以使用：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,b<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	printf(<span style="color:#e6db74">&#34;%d个人有%d个头&#34;</span>,a,b);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>输出结果为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">个人有</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">个头</span>
+</span></span></code></pre></div><h3 id="输入输出流-cincout">输入输出流 (cin/cout)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> a,b,c;
+</span></span><span style="display:flex;"><span>	cin<span style="color:#f92672">&gt;&gt;</span>a<span style="color:#f92672">&gt;&gt;</span>b<span style="color:#f92672">&gt;&gt;</span>c;
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span>a<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">&lt;&lt;</span>b<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">&lt;&lt;</span>c<span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>相较于格式化输入输出，输入输出流要简单一些，它不需要指定输入输出的内容的类型。你只需要用<code>&lt;&lt;</code>将输出的内容连接起来即可。变量与字符串之间需要一个<code>&lt;&lt;</code>，如上面的代码所示。</p>
+<p><code>cin</code>/<code>cout</code>的速度要慢于<code>scanf</code>/<code>printf</code>，且使用<code>endl</code>换行的速度要慢于<code>\n</code>换行。在部分场景下可能会导致程序运行时间超时。</p>
+<p>到这里，你可能会发现，我们的代码居然<strong>仍然无法运行</strong>。这是由于<code>scanf</code>、<code>printf</code>、<code>cin</code>、<code>cout</code>都是在C++库中的内容，我们需要通过<strong>引入头文件</strong>将他们引入到代码当中来。</p>
+<h2 id="头文件和命名空间">头文件和命名空间</h2>
+<p><code>scanf</code>和<code>printf</code>被包含在<code>stdio.h</code>头文件中，你需要在代码的最开头加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><p>以在程序当中使用它们。</p>
+<p><code>cin</code>和<code>cout</code>被包含在<code>iostream</code>头文件中，你需要在代码的最开头加入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><p>以在程序当中使用它们。</p>
+<p>命名空间，aka namespace，目的是在大型项目中防止<strong>重复名称的内容指代不清</strong>。上述的四个输入输出函数，均在<code>std</code>命名空间中。想要调用他们，有两种使用方法：</p>
+<ol>
+<li>
+<p>在使用时，在前面加上<code>std::</code> ；</p>
+<p>例如：<code>std::cout&lt;&lt;&quot;abc&quot;&lt;&lt;endl;</code></p>
+</li>
+<li>
+<p>在程序的开头写上<code>using namespace std;</code> 。此时，在后面使用上述四种函数时，你只需要直接<code>cout&lt;&lt;&quot;abc&quot;&lt;&lt;endl;</code> 即可。</p>
+</li>
+</ol>
+<p>第一种方式较为繁杂，但在大型工程中能更严谨地区分所指代的内容；第二种方式将整个<code>std</code>库引入到程序中来，在较小的项目中影响不大且更加便捷。</p>
+<p>(Ref: <a class="link" href="https://blog.csdn.net/kjl167/article/details/126244107"  target="_blank" rel="noopener"
+    >C++ namespace-CSDN博客</a>，<a class="link" href="https://oi-wiki.org/lang/namespace/"  target="_blank" rel="noopener"
+    >命名空间 - OI Wiki</a>)</p>
+<p>好了！接下来你可以开始体验每个程序员都将走的路了。你好，世界！</p>
+<p>为进一步明确刚才的命名空间事项，我讲述两个写法。</p>
+<p>写法一：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;bits/stdc++.h&gt; </span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">//&lt;bits/stdc++.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//aka 万能头，包含了绝大多数C++的库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//不建议在大型工程中使用万能头
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Hello, World!&#34;</span><span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>写法二：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;bits/stdc++.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#f92672">::</span>cout<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;Hello, World!&#34;</span><span style="color:#f92672">&lt;&lt;</span>endl;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"Admin"},"requiredMeta":["name","email"],"serverURL":"https://comment.xfrozenx.top/"});
+</script>
+
+    
+
+    <footer class="site-footer">
+
+
+    <section class="copyright">
+        &copy; 
+        
+        2025 Frozen Blog
+    </section>
+        <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>	
+
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

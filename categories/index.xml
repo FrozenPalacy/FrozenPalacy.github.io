@@ -6,7 +6,15 @@
         <description>Recent content in Categories on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 28 Apr 2025 22:25:09 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Oct 2025 23:45:00 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>OI</title>
+        <link>http://xfrozenx.top/categories/oi/</link>
+        <pubDate>Fri, 10 Oct 2025 23:45:00 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/categories/oi/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>High School</title>
         <link>http://xfrozenx.top/categories/high-school/</link>
         <pubDate>Mon, 28 Apr 2025 22:25:09 +0800</pubDate>
@@ -44,14 +52,6 @@
         <pubDate>Fri, 03 Jan 2025 19:05:03 +0800</pubDate>
         
         <guid>http://xfrozenx.top/categories/math/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>OI</title>
-        <link>http://xfrozenx.top/categories/oi/</link>
-        <pubDate>Sun, 10 Dec 2023 18:13:21 +0800</pubDate>
-        
-        <guid>http://xfrozenx.top/categories/oi/</guid>
         <description></description>
         </item>
         <item>
