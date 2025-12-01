@@ -6,7 +6,489 @@
         <description>Recent content in Logic on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 01 Dec 2025 18:14:22 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/logic/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Dec 2025 18:29:56 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/logic/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>非形式逻辑</title>
+        <link>http://xfrozenx.top/post/informal_logic/</link>
+        <pubDate>Mon, 01 Dec 2025 18:29:56 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/post/informal_logic/</guid>
+        <description>&lt;h1 id=&#34;一概念&#34;&gt;一、概念&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Definition&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;概念：反映思维对象特有属性（或本质属性）的思维形态。&lt;/li&gt;
+&lt;li&gt;语词&lt;/li&gt;
+&lt;li&gt;对象&lt;/li&gt;
+&lt;li&gt;属性
+&lt;ol&gt;
+&lt;li&gt;特有属性&lt;/li&gt;
+&lt;li&gt;偶有属性&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;概念的逻辑特征
+&lt;ol&gt;
+&lt;li&gt;内涵&lt;/li&gt;
+&lt;li&gt;外延&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概念与语词的联系和区别：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;联系：语词是概念的语言形式；概念是语词的思想内容。&lt;/li&gt;
+&lt;li&gt;区别：
+&lt;ol&gt;
+&lt;li&gt;概念必须通过语词表达， 但并非所有语词都表达概念；&lt;/li&gt;
+&lt;li&gt;概念和语词不是一一对应的。即&lt;strong&gt;不同的语词在不同语境中可以表达同一个概念&lt;/strong&gt;（语词不同，语义相同）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概念的种类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;按概念外延的数量分&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;普遍概念：反映一类对象的概念，&lt;strong&gt;外延至少有两个对象&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;单独概念：反映某个特定对象的概念，外延&lt;strong&gt;只有一个对象&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;用于表达的语词形式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;专名（专有名称）：北京、亚里士多德&lt;/li&gt;
+&lt;li&gt;摹状词（描述特定对象的短语）：中国的首都、《工具论》的作者&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;空概念：反映空类的概念。如“独角兽”。&lt;/p&gt;
+&lt;p&gt;此处的空概念定义为现实世界中不存在的概念，可能在想象世界/可能世界中存在。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按概念的外延所反映的对象是否为集合体来分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;集合体：由若干对象组成的整体，其中每一个对象称为这个集合体的“个体”。&lt;/p&gt;
+&lt;p&gt;个体组成集合体，但&lt;strong&gt;不具有集合体的属性&lt;/strong&gt;，即&lt;strong&gt;整体与部分&lt;/strong&gt;的关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;非集合体：由若干对象组成。
+对象组成非集合体，&lt;strong&gt;必然具有非集合体的属性&lt;/strong&gt;，即&lt;strong&gt;一般与个别&lt;/strong&gt;的关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;集合概念 / 非集合概念：森林 / 树&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按概念的内涵所反映的对象是否具有某种属性来分类&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;正概念（肯定概念）：反映事物具有某种属性的概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;负概念（否定概念）：反映事物不具有某种属性的概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正负概念总是成对出现&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;正负概念在形式结构上有如下关系：&lt;/p&gt;
+&lt;p&gt;$$
+负概念=(否定词+正概念)
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概念的集合使用和非集合使用&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Definition：在不同语境中，&lt;strong&gt;同一语词&lt;/strong&gt;既可以表达&lt;strong&gt;集合概念&lt;/strong&gt;，也可以表达&lt;strong&gt;非集合概念&lt;/strong&gt;，这就是概念的集合使用与非集合使用。&lt;/li&gt;
+&lt;li&gt;判断上来看，如果在概念前面加一个量词说得通，就是非集合概念。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概念之间外延关系（不会的请重修高中政治选必四）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;全同关系、真包含于关系、真包含、交叉、全异关系。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVzFzT&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVzFzT.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVzFzT.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;strong&gt;传统逻辑&lt;/strong&gt;中，将“真包含于”关系和“真包含”关系统称为**“属种关系”**。请注意，是在传统逻辑中！&lt;/p&gt;
+&lt;p&gt;不会的请重修高中政治选必四。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;全异关系又分为&lt;strong&gt;矛盾关系&lt;/strong&gt;和&lt;strong&gt;反对关系&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;矛盾关系：$S+P=U$.&lt;/p&gt;
+&lt;p&gt;反对关系：$S+P&amp;lt;U$.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVzAQU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVzAQU.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVzAQU.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内涵与外延的&lt;strong&gt;反变关系&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;具有属种关系的概念的内涵与外延之间存在反变关系。&lt;/li&gt;
+&lt;li&gt;反变关系：一个概念的内涵越少，则其概念的外延越大；反之，一个概念的内涵越多，其外延越小。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;属种概念之间内涵与外延反变关系，是对概念进行限制和概括的逻辑根据。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;概念的限制、概括及应注意的问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;二定义&#34;&gt;二、定义&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Definition：用简明的形式揭示概念内涵的逻辑方法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组成：被定义项、定义项、定义联项&lt;/p&gt;
+&lt;p&gt;（定义联项：表示被定义项与定义项的逻辑关系并联结它们的概念）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一般形式：$D_s$就是$D_p$。其中，$D_s$是被定义项，$D_p$是定义项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内涵：思维对象的特有属性；&lt;/p&gt;
+&lt;p&gt;外延：具有此属性的一类对象。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;用于明确概念的内涵，&lt;strong&gt;划分&lt;/strong&gt;用于明确概念的外延。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;类、子类 = 属、种&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;现代定义的三大类型&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内涵定义：种差法（属+种差）&lt;/p&gt;
+&lt;p&gt;$$
+被定义项=种差+邻近的属
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;种差：在同一个属概念下，同层次的种概念之间的差别，并且这种差别为被定义项所共有。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;内涵定义的不同种类：性质定义、发生定义、功用定义、关系定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;范畴&lt;/strong&gt;作为一定论域中&lt;strong&gt;最大的属&lt;/strong&gt;，不适用种差法。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;单独概念&lt;/strong&gt;指称单独对象，不适合用种差法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;语词定义：界定语词标准用法或特殊用法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分为报道性定义（词典定义）、约定性定义、修正性定义（精确定义）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;外延定义：列举一概念的外延&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;分为穷举定义、例举定义、实指定义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;eg. “近亲属”指夫、妻、父、母、子、女、同胞兄弟姐妹。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义的规则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义项与被定义项的外延&lt;strong&gt;必须全同&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;违反则犯“&lt;strong&gt;定义过宽/定义过窄&lt;/strong&gt;”的错误。&lt;/p&gt;
+&lt;p&gt;太阳是白昼发光的星体。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义项不能直接或间接包含被定义项。&lt;/p&gt;
+&lt;p&gt;违反则犯”&lt;strong&gt;同语反复（循环定义）&lt;/strong&gt;“的错误。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义项必须清楚确切。不可使用比喻的手法。&lt;/p&gt;
+&lt;p&gt;违反则犯”&lt;strong&gt;含混不清&lt;/strong&gt;“的错误。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定义一般&lt;strong&gt;不使用否定式&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;特殊情况：当种差为负概念，或定义联项为否定形式，那么可以使用否定定义。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVzVL4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVzVL4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVzVL4.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;三划分&#34;&gt;三、划分&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Definition: 揭示概念外延的逻辑方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组成：母项、子项、划分标准。母项和子项是属种关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;整体与部分不是属种关系&lt;/strong&gt;。要将“划分”与“分解”区别开来。&lt;/p&gt;
+&lt;p&gt;当你不能说A是B的一种时，它就不属于属种关系。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;方法：一次划分、连续划分、二分法。&lt;/p&gt;
+&lt;p&gt;二分法中，两子项具有矛盾关系，正概念与负概念&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;规则：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每次划分必须按照同一个标准。否则犯“&lt;strong&gt;标准不一&lt;/strong&gt;”的的错误。&lt;/li&gt;
+&lt;li&gt;子项必须互相排斥，应为&lt;strong&gt;全异关系&lt;/strong&gt;，不能是属种关系、交叉关系。否则犯”&lt;strong&gt;子项相容&lt;/strong&gt;”的错误。&lt;/li&gt;
+&lt;li&gt;划分后，各子项外延之和必须等于母项外延。否则犯“&lt;strong&gt;子项不全&lt;/strong&gt;”、“&lt;strong&gt;多出子项&lt;/strong&gt;”的错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVzeeJ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVzeeJ.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVzeeJ.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;四论证&#34;&gt;四、论证&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;包括&lt;strong&gt;证明&lt;/strong&gt;和&lt;strong&gt;反驳&lt;/strong&gt;。（即立论、驳论）。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;证明是用一个或一些&lt;strong&gt;已知为真&lt;/strong&gt;的命题去确定&lt;strong&gt;另一命题为真或成立&lt;/strong&gt;的思维过程。&lt;/li&gt;
+&lt;li&gt;反驳是用一个或一些&lt;strong&gt;已知为真&lt;/strong&gt;的命题去确定&lt;strong&gt;另一命题为假或不成立&lt;/strong&gt;的思维过程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组成：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;论题：论证中需要证明或反驳的命题。解决“论证什么”的问题。&lt;/li&gt;
+&lt;li&gt;论据：论证中用以确定论题真实性或虚假性的命题。解决“用什么论证”的问题。&lt;/li&gt;
+&lt;li&gt;论证方式：论证中使用的推理形式。解决“如何论证”的问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;论证和推理的联系&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVzmw9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVzmw9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVzmw9.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;论证和推理的区别&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;思维进程不同。从论题到论据 / 从前提到结论&lt;/li&gt;
+&lt;li&gt;逻辑要求不同。论证要求证据内容为真且形式正确，推理只要求形式正确。&lt;/li&gt;
+&lt;li&gt;论证一般比推理复杂，是推理的综合运用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;充足理由原则&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;定义：在思维和论证过程中，任何正确的思想，必然有其充足理由。&lt;/p&gt;
+&lt;p&gt;A真，是因为B真且B足以推出A。则此时，B是A的充足理由。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;逻辑要求：理由必须真实且充分（推理前提真实、推理形式有效）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;五证明&#34;&gt;五、证明&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;按推理形式不同，分为演绎证明、归纳证明和类比证明；&lt;/p&gt;
+&lt;p&gt;按是否与论题直接发生联系，分为：&lt;/p&gt;
+&lt;p&gt;直接证明：根据论据的真实性，通过逻辑推理直接确定论题真实性的论证。&lt;/p&gt;
+&lt;p&gt;间接证明：用论据确定与论题相矛盾或具有下反对关系的反论题的虚假，根据排中律确定论题真实性。&lt;em&gt;（反证法、选言证法）&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;区分直接和间接，主要看&lt;strong&gt;论证是否直接从原论题出发&lt;/strong&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;反证法：设立反论题，通过确定反论题为假，根据排中律确定原论题为真。&lt;/p&gt;
+&lt;p&gt;在逻辑推理中，&lt;strong&gt;前真不能推出后假&lt;/strong&gt;。蕴含关系只在此情况中不成立。所以当后件为假时，前件一定为假。故在此关系中，逻辑是通顺的。方式为&lt;strong&gt;充分条件假言推理否定后件式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;$$
+假设\lnot p\Rightarrow q，\由于\lnot q=True, \所以\lnot(\lnot p)\Rightarrow p=True
+$$&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVznoR&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVznoR.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVznoR.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选言证法：通过确定除论题之外其余可能情况都为虚假，从而推出论题为真的一种间接证明方法。&lt;em&gt;又叫排除法、淘汰法&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;本质上是将非p的所有情况拆解成了q和r两方面。遵循排中律进行证明。&lt;/p&gt;
+&lt;p&gt;方式为&lt;strong&gt;相容选言推理的否定肯定式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;$$
+p\lor(q+r)成立，必有一真\由于q+r=False,则p=True
+$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://xfrozenx.top/post/informal_logic/image6.png&#34;
+	width=&#34;918&#34;
+	height=&#34;519&#34;
+	srcset=&#34;http://xfrozenx.top/post/informal_logic/image6_hua10ea158579f75a0a15e22efff52a5d9_402497_480x0_resize_box_3.png 480w, http://xfrozenx.top/post/informal_logic/image6_hua10ea158579f75a0a15e22efff52a5d9_402497_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;176&#34;
+		data-flex-basis=&#34;424px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;六反驳&#34;&gt;六、反驳&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;反驳是对某一具体证明过程或立论的论题的证伪。&lt;/li&gt;
+&lt;li&gt;包括：反驳论题、反驳论据、反驳论证方式。&lt;/li&gt;
+&lt;li&gt;反驳论题和论据的方式：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;直接反驳：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;用论据直接确定被反驳论题的虚假。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;归谬反驳：从被反驳论题引出互相矛盾的命题，进而证明被反驳论题是假的。&lt;/p&gt;
+&lt;p&gt;依然是一个&lt;strong&gt;充分条件假言推理否定后件式&lt;/strong&gt;。归谬法。&lt;/p&gt;
+&lt;p&gt;$$
+p\Rightarrow q,由于\lnot q=True,所以\lnot p =True
+$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://xfrozenx.top/post/informal_logic/image7.png&#34;
+	width=&#34;945&#34;
+	height=&#34;531&#34;
+	srcset=&#34;http://xfrozenx.top/post/informal_logic/image7_hu34d32c939bc8e7064c9b5457f54b7226_396797_480x0_resize_box_3.png 480w, http://xfrozenx.top/post/informal_logic/image7_hu34d32c939bc8e7064c9b5457f54b7226_396797_1024x0_resize_box_3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;427px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;间接反驳&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;设立与被反驳论题具有矛盾关系或反对关系的反论题，通过证明反论题的真实，并根据矛盾律的要求，从而确定被反驳论题的虚假性。&lt;/li&gt;
+&lt;li&gt;步骤：设立反论题；独立证明反论题为真；根据矛盾律，由反论题真，确定原论题假。&lt;em&gt;（由真推假）&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;间接证明和间接反驳的不同点
+&lt;ol&gt;
+&lt;li&gt;目的不同：一个是论证，一个是反驳&lt;/li&gt;
+&lt;li&gt;基本规律不同：间接证明根据&lt;strong&gt;排中律&lt;/strong&gt;，简介反驳根据&lt;strong&gt;矛盾律&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;论题与反论题关系不同：证明中二者具有矛盾关系或下反对关系，反驳中具有矛盾关系或反对关系&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;反驳论证方式
+&lt;ol&gt;
+&lt;li&gt;指出对方在论证中违反逻辑规律要求或推理规则，即论据“推不出”论题。&lt;/li&gt;
+&lt;li&gt;也可以使用&lt;strong&gt;归谬法。先假定其论证方式正确&lt;/strong&gt;，&lt;strong&gt;再按同样的论证方式推导出荒谬的结论&lt;/strong&gt;，从而否定其论证方式。&lt;/li&gt;
+&lt;li&gt;论证方式无效不等于论题、论据无效，只可以说明论题的真实性可疑。sus。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;七论证规则&#34;&gt;七、论证规则&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;关于论题：
+&lt;ol&gt;
+&lt;li&gt;论题必须清楚、明确——“论旨不清”&lt;/li&gt;
+&lt;li&gt;论题必须始终同一——“转移/偷换论题、论证过少/过多”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;关于论据：
+&lt;ol&gt;
+&lt;li&gt;必须是已知为真的命题——“虚假理由/预期理由”&lt;/li&gt;
+&lt;li&gt;真实性不能依赖论题来证明——“循环论证”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;关于论证方式：
+&lt;ol&gt;
+&lt;li&gt;从论据应能推出论题——“推不出”&lt;/li&gt;
+&lt;li&gt;推不出有以下情况：
+&lt;ol&gt;
+&lt;li&gt;违反推理规则或违反逻辑规律要求&lt;/li&gt;
+&lt;li&gt;论据、论题无关&lt;/li&gt;
+&lt;li&gt;论据论题必要但不充分——“理由不充足”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>逻辑的基本规律</title>
         <link>http://xfrozenx.top/post/logicregulation/</link>
         <pubDate>Mon, 01 Dec 2025 18:14:22 +0800</pubDate>
