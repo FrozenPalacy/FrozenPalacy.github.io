@@ -6,7 +6,23 @@
         <description>Recent content in Categories on Frozen Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 12 Oct 2025 01:21:08 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 01 Dec 2025 18:14:22 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Logic</title>
+        <link>http://xfrozenx.top/categories/logic/</link>
+        <pubDate>Mon, 01 Dec 2025 18:14:22 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/categories/logic/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>University</title>
+        <link>http://xfrozenx.top/categories/university/</link>
+        <pubDate>Mon, 01 Dec 2025 18:14:22 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/categories/university/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>OI</title>
         <link>http://xfrozenx.top/categories/oi/</link>
         <pubDate>Sun, 12 Oct 2025 01:21:08 +0800</pubDate>

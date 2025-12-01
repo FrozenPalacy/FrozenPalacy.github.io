@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>University on Frozen Blog</title>
+        <link>http://xfrozenx.top/categories/university/</link>
+        <description>Recent content in University on Frozen Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 01 Dec 2025 18:14:22 +0800</lastBuildDate><atom:link href="http://xfrozenx.top/categories/university/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>逻辑的基本规律</title>
+        <link>http://xfrozenx.top/post/logicregulation/</link>
+        <pubDate>Mon, 01 Dec 2025 18:14:22 +0800</pubDate>
+        
+        <guid>http://xfrozenx.top/post/logicregulation/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;逻辑常项符号汇编。第二章 基本规律 &lt;em&gt;课件P3&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;简单地，写出来是各种各样的符号的，都属于逻辑常项。&lt;/p&gt;
+&lt;p&gt;用各种字母表达的，属于逻辑变项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最基本的逻辑特性：确定性、无矛盾性、明确性。&lt;/p&gt;
+&lt;p&gt;所有正确思维应满足上述三个性质。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同一律、矛盾律、排中律在思维中普遍适用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;逻辑常项（符号）表&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;汉语&lt;/th&gt;
+&lt;th&gt;命题类别&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;所有……都是&lt;/td&gt;
+&lt;td&gt;全称肯定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;E&lt;/td&gt;
+&lt;td&gt;所有……都不是&lt;/td&gt;
+&lt;td&gt;全称否定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;有些……是&lt;/td&gt;
+&lt;td&gt;特称肯定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;有些……不是&lt;/td&gt;
+&lt;td&gt;特称否定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;与……有关系&lt;/td&gt;
+&lt;td&gt;关系命题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;矛盾关系：两个命题不可同真且不可同假。（对角线）&lt;/p&gt;
+&lt;p&gt;反对关系：两个关系不可同真，可同假。&lt;/p&gt;
+&lt;p&gt;下反对关系：两个关系可同真，不可同假。&lt;/p&gt;
+&lt;p&gt;等值关系：图中对角线连接的东西。&lt;/p&gt;
+&lt;p&gt;AEIO统称直言命题。&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVxLz8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVxLz8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVxLz8.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;一同一律&#34;&gt;一、同一律&lt;/h1&gt;
+&lt;h2 id=&#34;一内容和要求&#34;&gt;（一）内容和要求&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;内容：同一思维过程中，每一思想与其自身同一。A就是A。&lt;/li&gt;
+&lt;li&gt;公式： $A\Rightarrow A$  / 如果$A$，那么$A$.&lt;/li&gt;
+&lt;li&gt;要求：在同一思维过程中，任一概念或命题都必须保持自身同一。&lt;strong&gt;确定性&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;逻辑错误：1.混淆或偷换概念；2.转移或偷换论题。&lt;/li&gt;
+&lt;li&gt;同一律要求思想保持确定性，不否认思想的发展变化。&lt;/li&gt;
+&lt;li&gt;同一律是思维的规律，仅在思维领域中起作用。不要求客观事物永远与其自身绝对同一。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;二矛盾律&#34;&gt;二、矛盾律&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内容：同一思维过程中，两个相互否定的思想不能同真，必有一假。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式：A不是非A。&lt;/p&gt;
+&lt;p&gt;$$
+\lnot (A \land\lnot A)
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在&lt;strong&gt;同一思维&lt;/strong&gt;*（即同一时间、同一关系下对同一对象）*过程中，对于不能同真的命题不能同时予以肯定。&lt;strong&gt;无矛盾性&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;指的是思想的自相矛盾，而非客观现实中存在的矛盾&lt;/li&gt;
+&lt;li&gt;**矛盾律对下反对关系不适用！！**下反对关系可以同真。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;相互否定的思想：具有矛盾关系或反对关系的命题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推理时&lt;strong&gt;由真推假&lt;/strong&gt;：若命题 $p$为真，则否定命题 $q$为假。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;悖论&#34;&gt;悖论&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;一类特殊的逻辑矛盾。由该命题的真可推出它的假，由假可推出它的真。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$A=\lnot A$。A蕴含非A，非A蕴含A，&lt;strong&gt;A与非A等值&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;罗素 集合论悖论：&lt;/p&gt;
+&lt;p&gt;定义一个集合 $S$， $S={A|A\notin A,A为集合}$。则 $S\isin S$吗？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;说谎者悖论：这句话是一句谎话。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;理发师悖论：我只给村里不给自己理发的人理发。那么理发师是否给自己理发？&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;三排中律&#34;&gt;三、排中律&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内容：在同一思维过程中，两个互相矛盾的思想不能同假，必有一真。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;公式：A或非A。&lt;/p&gt;
+&lt;p&gt;$$
+A\lor\lnot A
+$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在同一思维过程中，对于不能同假的两个命题不能同时予以否定。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;排中律不适用反对关系&lt;/strong&gt;。反对关系可以同假。&lt;/li&gt;
+&lt;li&gt;排中律仅要求“不能同时否定”，但不要求对矛盾关系或下反对关系命题确定哪一个为真，哪一个为假。即，对哪一方为真和哪一方为假可以不做断定。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;造成的错误：两不可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;推理时&lt;strong&gt;由假推真&lt;/strong&gt;：若命题 $p$为假，则否定命题 $q$为真。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;复杂问语-aka-不正当问语&#34;&gt;复杂问语 aka 不正当问语&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;概念：一种具有预设成分的问语。&lt;/p&gt;
+&lt;p&gt;当问语含有对方未承认并不接受的预设成分（未经证实的假设），不论作肯定或否定回答，其结果都承认了问语中的预设成分。故对这类问语”不置可否“不违反排中律。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;肯定回答： $p\land q$，否定 $p\land\lnot q$，不置可否 $\lnot q$.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;区分矛盾律、排中律：&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVxjsg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVxjsg.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;pZVxjsg.png&#34;
+	
+	
+&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;德摩根定律：$\lnot(p\lor q)\Rightarrow\lnot p\land\lnot q$.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
