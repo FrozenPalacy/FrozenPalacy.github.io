@@ -361,7 +361,7 @@ $$&lt;/p&gt;
 &lt;p&gt;反证法：设立反论题，通过确定反论题为假，根据排中律确定原论题为真。&lt;/p&gt;
 &lt;p&gt;在逻辑推理中，&lt;strong&gt;前真不能推出后假&lt;/strong&gt;。蕴含关系只在此情况中不成立。所以当后件为假时，前件一定为假。故在此关系中，逻辑是通顺的。方式为&lt;strong&gt;充分条件假言推理否定后件式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;$$
-假设\lnot p\Rightarrow q，\由于\lnot q=True, \所以\lnot(\lnot p)\Rightarrow p=True
+假设\lnot p\Rightarrow q，\\由于\lnot q=True, \\所以\lnot(\lnot p)\Rightarrow p=True
 $$&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://imgchr.com/i/pZVznoR&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;img src=&#34;https://s41.ax1x.com/2025/12/01/pZVznoR.png&#34;
@@ -380,7 +380,7 @@ $$&lt;/p&gt;
 &lt;p&gt;本质上是将非p的所有情况拆解成了q和r两方面。遵循排中律进行证明。&lt;/p&gt;
 &lt;p&gt;方式为&lt;strong&gt;相容选言推理的否定肯定式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;$$
-p\lor(q+r)成立，必有一真\由于q+r=False,则p=True
+p\lor(q+r)成立，必有一真\\由于q+r=False,则p=True
 $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://xfrozenx.top/post/informal_logic/image6.png&#34;
 	width=&#34;918&#34;
@@ -416,7 +416,7 @@ $$&lt;/p&gt;
 &lt;p&gt;归谬反驳：从被反驳论题引出互相矛盾的命题，进而证明被反驳论题是假的。&lt;/p&gt;
 &lt;p&gt;依然是一个&lt;strong&gt;充分条件假言推理否定后件式&lt;/strong&gt;。归谬法。&lt;/p&gt;
 &lt;p&gt;$$
-p\Rightarrow q,由于\lnot q=True,所以\lnot p =True
+p\Rightarrow q, 由于\lnot q=True, 所以\lnot p =True
 $$&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://xfrozenx.top/post/informal_logic/image7.png&#34;
 	width=&#34;945&#34;
