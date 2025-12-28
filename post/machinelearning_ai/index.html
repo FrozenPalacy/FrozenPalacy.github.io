@@ -11,7 +11,7 @@
 只需要特征数据，没有标签数据的机器学习就是无监督学习。即仅有$x$作为输入。
 用于聚类和降维。
 二、基于Scikit-learn库建立线性回归模型 回归学习，基于上文，一眼盯真，鉴定为有监督学习。 以课件的案例举例，通过AT, AP, RH, V预测PE。
-素材xlsx在这个超链接里。
+素材xlsx在这个超链接里。 如果打不开就复制链接 http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx
 首先读取数据
 import pandas as pd #读xlsx ccpp_data=pd.read_excel(&amp;#34;Combined_Cycle_Power_Plant_Data_Set.xlsx&amp;#34;) #读特征值，即第一部分中的x # .values 方法使返回值变成一个二维列表，而非原本的dataframe对象 X=ccpp_data.iloc[:,:-1].values #读目标值，即y y=ccpp_data.iloc[:,-1].values 读取特征值读[:,:-1]即读取所有行中的除最后一列的所有数据。为了等会找回归关系。读目标值只读最后一列，因为要求最后一列。
 对于有监督学习，在训练好模型后、预测数据前，可以通过一组测试数据来评估模型的泛化能力，即模型的预测能力。通过train_set_split()函数或test_set_split()函数实现。
@@ -80,7 +80,7 @@ code.has-jax {
 只需要特征数据，没有标签数据的机器学习就是无监督学习。即仅有$x$作为输入。
 用于聚类和降维。
 二、基于Scikit-learn库建立线性回归模型 回归学习，基于上文，一眼盯真，鉴定为有监督学习。 以课件的案例举例，通过AT, AP, RH, V预测PE。
-素材xlsx在这个超链接里。
+素材xlsx在这个超链接里。 如果打不开就复制链接 http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx
 首先读取数据
 import pandas as pd #读xlsx ccpp_data=pd.read_excel(&amp;#34;Combined_Cycle_Power_Plant_Data_Set.xlsx&amp;#34;) #读特征值，即第一部分中的x # .values 方法使返回值变成一个二维列表，而非原本的dataframe对象 X=ccpp_data.iloc[:,:-1].values #读目标值，即y y=ccpp_data.iloc[:,-1].values 读取特征值读[:,:-1]即读取所有行中的除最后一列的所有数据。为了等会找回归关系。读目标值只读最后一列，因为要求最后一列。
 对于有监督学习，在训练好模型后、预测数据前，可以通过一组测试数据来评估模型的泛化能力，即模型的预测能力。通过train_set_split()函数或test_set_split()函数实现。
@@ -108,7 +108,7 @@ from sklearn.model_selection import train_test_split X_train, X_test, y_train, y
 只需要特征数据，没有标签数据的机器学习就是无监督学习。即仅有$x$作为输入。
 用于聚类和降维。
 二、基于Scikit-learn库建立线性回归模型 回归学习，基于上文，一眼盯真，鉴定为有监督学习。 以课件的案例举例，通过AT, AP, RH, V预测PE。
-素材xlsx在这个超链接里。
+素材xlsx在这个超链接里。 如果打不开就复制链接 http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx
 首先读取数据
 import pandas as pd #读xlsx ccpp_data=pd.read_excel(&amp;#34;Combined_Cycle_Power_Plant_Data_Set.xlsx&amp;#34;) #读特征值，即第一部分中的x # .values 方法使返回值变成一个二维列表，而非原本的dataframe对象 X=ccpp_data.iloc[:,:-1].values #读目标值，即y y=ccpp_data.iloc[:,-1].values 读取特征值读[:,:-1]即读取所有行中的除最后一列的所有数据。为了等会找回归关系。读目标值只读最后一列，因为要求最后一列。
 对于有监督学习，在训练好模型后、预测数据前，可以通过一组测试数据来评估模型的泛化能力，即模型的预测能力。通过train_set_split()函数或test_set_split()函数实现。
@@ -414,7 +414,9 @@ from sklearn.model_selection import train_test_split X_train, X_test, y_train, y
 </ol>
 <p>以课件的案例举例，通过AT, AP, RH, V预测PE。</p>
 <p>素材xlsx在<a class="link" href="http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx"  target="_blank" rel="noopener"
-    >这个超链接里</a>。</p>
+    >这个超链接里</a>。
+如果打不开就复制链接 <a class="link" href="http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx"  target="_blank" rel="noopener"
+    >http://www.xfrozenx.top/myfile/Combined_Cycle_Power_Plant_Data_Set.xlsx</a></p>
 <p>首先读取数据</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span><span style="display:flex;"><span>
