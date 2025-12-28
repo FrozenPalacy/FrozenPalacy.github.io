@@ -55,7 +55,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#读目标值，即y&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;y&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;ccpp_data&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;iloc[:,&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;]&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;values
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;读取特征值读&lt;code&gt;[:,:-1]&lt;/code&gt;即读取所有行中的除最后一列的所有数据。为了等会找回归关系。读目标值只读最后一列，因为要求最后一列。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;读取特征值读&lt;code&gt;[:,:-1]&lt;/code&gt;即读取所有行中的除最后一列的所有数据。为了等会找回归关系。读目标值只读最后一列，因为题设任务是求最后一列。&lt;/p&gt;
 &lt;p&gt;对于有监督学习，在训练好模型后、预测数据前，可以通过一组测试数据来评估模型的泛化能力，即模型的预测能力。通过&lt;code&gt;train_set_split()&lt;/code&gt;函数或&lt;code&gt;test_set_split()&lt;/code&gt;函数实现。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;train_set_split()&lt;/code&gt; 函数中各参数要求如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;train_set_split(&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;arrays, test_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, train_size&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, random_state&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;, shuffle&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;, stratify&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;)
@@ -87,7 +87,7 @@ R^2=\frac{\sum^n_{i=1}(y_i-\overline{y})^2}{\sum^n_{i=1}(\hat{y}_i-\overline{y})
 $$&lt;/p&gt;
 &lt;p&gt;其中，$\hat{y}_i$是用模型预测的第$i$个样本的目标值，$\overline{y}$是样本真实目标值的平均值。&lt;/p&gt;
 &lt;p&gt;有两种方法计算一个模型的$R^2$。在此分别介绍。&lt;/p&gt;
-&lt;p&gt;第一种，直接运用&lt;code&gt;LinearRegression()&lt;/code&gt; 函数的&lt;code&gt;.score&lt;/code&gt; 方法算。即把每个$(x,y)$数对带进去算。&lt;/p&gt;
+&lt;p&gt;第一种，直接运用&lt;code&gt;LinearRegression()&lt;/code&gt; 对象的&lt;code&gt;.score&lt;/code&gt; 方法算。即把每个$(x,y)$数对带进去算。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;.score&lt;/code&gt; 方法的参数如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;score(self,X,y,sample_weight&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;None&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;可见&lt;code&gt;.score&lt;/code&gt; 方法是基于输入和标签值来算的。&lt;/p&gt;
