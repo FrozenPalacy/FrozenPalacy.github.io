@@ -170,9 +170,10 @@
             <div class="score-label">得分</div>
             <div class="score-value" id="score">0</div>
         </div>
+        <!-- 新增：刷新倒数计数器 -->
         <div class="score-panel">
-            <div class="score-label">等级</div>
-            <div class="score-value" id="level">1</div>
+            <div class="score-label">刷新倒数</div>
+            <div class="score-value" id="drop-counter">6</div>
         </div>
     </div>
 
@@ -180,10 +181,9 @@
         <canvas id="gameCanvas" width="480" height="640"></canvas>
         <div class="controls">
             <button class="btn btn-primary" id="startBtn">开始游戏</button>
-            <button class="btn btn-secondary" id="pauseBtn">暂停</button>
         </div>
         <p class="instructions">鼠标移动瞄准，点击发射泡泡 | 三个相同颜色连在一起即可消除</p>
-        <p class="versions">Peter Zeng with Kimi K2 & Claude Code | Beta 1.0</p>
+        <p class="versions">Peter Zeng with Kimi K2 & Claude Code | Beta 1.1</p>
     </div>
 
     <div class="game-over-modal" id="gameOverModal">
@@ -217,7 +217,6 @@
                 this.level = 1;
                 this.shots = 0;
                 this.isRunning = false;
-                this.isPaused = false;
                 this.isGameOver = false;
                 this.grid = []; // 泡泡网格
                 this.particles = []; // 粒子效果
@@ -230,13 +229,18 @@
                 this.level = 1;
                 this.shots = 0;
                 this.isRunning = true;
-                this.isPaused = false;
                 this.isGameOver = false;
                 this.grid = [];
                 this.particles = [];
                 this.fallingBubbles = [];
                 this.topRowOffset = 0;
+                // 清除正在飞行的泡泡并重置发射器
+                if (shooter) {
+                    shooter.projectile = null;
+                    //shooter.reset();
+                }
                 this.initGrid();
+                updateUI();
             }
 
             initGrid() {
@@ -553,6 +557,9 @@
 
             // 检查游戏结束
             checkGameOver();
+
+            // 更新UI（包括下落倒数）
+            updateUI();
         }
 
         // 在指定位置附近附加泡泡（用于反弹后的精准定位）
@@ -619,6 +626,9 @@
 
             // 检查游戏结束
             checkGameOver();
+
+            // 更新UI（包括下落倒数）
+            updateUI();
         }
 
         // 获取邻居（六方向：上下左右+斜向）
@@ -850,12 +860,14 @@
         // 更新UI
         function updateUI() {
             document.getElementById('score').textContent = game.score;
-            document.getElementById('level').textContent = Math.floor(game.shots / CONFIG.CEILING_DROP_INTERVAL) + 1;
+            // 新增：计算剩余步数，更新下落计数器
+            const remaining = CONFIG.CEILING_DROP_INTERVAL - (game.shots % CONFIG.CEILING_DROP_INTERVAL);
+            document.getElementById('drop-counter').textContent = remaining;
         }
 
         // 游戏循环
         function gameLoop() {
-            if (!game.isRunning || game.isPaused) {
+            if (!game.isRunning) {
                 requestAnimationFrame(gameLoop);
                 return;
             }
@@ -901,7 +913,7 @@
         if (CONFIG.IS_MOBILE) {
             // 移动端：触摸移动更新瞄准角度
             window.addEventListener('touchmove', (e) => {
-                if (!game.isRunning || game.isPaused) return;
+                if (!game.isRunning) return;
                 const touch = e.touches[0];
                 mouseX = touch.clientX;
                 mouseY = touch.clientY;
@@ -916,34 +928,47 @@
 
         // 点击/触摸窗口发射
         if (CONFIG.IS_MOBILE) {
-            // 移动端：点击屏幕位置直接发射到该方向
-            window.addEventListener('touchstart', (e) => {
-                if (e.target.tagName === 'BUTTON') return;
-                if (!game.isRunning || game.isPaused) return;
+            // 移动端：仅在画布内点击才发射，且在发射器上方点击
+            function handleMobileInput(clientX, clientY) {
+                if (!game.isRunning) return;
 
-                const touch = e.touches[0];
-                // 更新瞄准角度到触摸位置
-                shooter.update(touch.clientX, touch.clientY);
+                const rect = canvas.getBoundingClientRect();
+                // 检查是否在画布内
+                if (clientX < rect.left || clientX > rect.right ||
+                    clientY < rect.top || clientY > rect.bottom) {
+                    return;
+                }
+
+                // 检查是否在发射器上方（不能在泡泡下方点击）
+                const relativeY = clientY - rect.top;
+                if (relativeY > shooter.y) {
+                    return;
+                }
+
+                // 更新瞄准角度到点击位置
+                shooter.update(clientX, clientY);
                 // 发射
                 shooter.shoot();
                 updateStartButton();
+            }
+
+            window.addEventListener('touchstart', (e) => {
+                if (e.target.tagName === 'BUTTON') return;
+                const touch = e.touches[0];
+                handleMobileInput(touch.clientX, touch.clientY);
             }, { passive: false });
 
             // 也支持鼠标点击（用于测试）
             window.addEventListener('click', (e) => {
                 if (e.target.tagName === 'BUTTON') return;
-                if (!game.isRunning || game.isPaused) return;
-
-                shooter.update(e.clientX, e.clientY);
-                shooter.shoot();
-                updateStartButton();
+                handleMobileInput(e.clientX, e.clientY);
             });
         } else {
             // 桌面端：点击发射，使用当前瞄准角度
             window.addEventListener('click', (e) => {
                 // 避免点击按钮时触发发射
                 if (e.target.tagName === 'BUTTON') return;
-                if (game.isRunning && !game.isPaused) {
+                if (game.isRunning) {
                     shooter.shoot();
                     updateStartButton();
                 }
@@ -964,13 +989,6 @@
             game.reset();
             document.getElementById('gameOverModal').style.display = 'none';
             updateStartButton();
-        });
-
-        document.getElementById('pauseBtn').addEventListener('click', () => {
-            if (game.isRunning) {
-                game.isPaused = !game.isPaused;
-                document.getElementById('pauseBtn').textContent = game.isPaused ? '继续' : '暂停';
-            }
         });
 
         document.getElementById('restartBtn').addEventListener('click', () => {
