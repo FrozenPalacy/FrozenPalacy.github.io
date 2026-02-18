@@ -31,11 +31,47 @@
             color: white;
         }
 
+        /* 顶部中间标题和版本号样式 */
+        .game-header-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            z-index: 10;
+        }
+
+        .game-title-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            white-space: nowrap;
+        }
+
+        .version-badge {
+            font-size: 11px;
+            color: #a5b4fc;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 4px;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer; /* 添加手型光标，提示可点击 */
+            transition: background 0.3s;
+        }
+
+        .version-badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         .score-panel {
             background: rgba(255, 255, 255, 0.1);
             padding: 10px 20px;
             border-radius: 25px;
             backdrop-filter: blur(10px);
+            white-space: nowrap;
         }
 
         .score-label {
@@ -43,10 +79,28 @@
             opacity: 0.8;
         }
 
+        .score-container {
+            display: flex;
+            align-items: baseline;
+        }
+
         .score-value {
             font-size: 24px;
             font-weight: bold;
             color: #ffd700;
+        }
+
+        .score-reminder {
+            font-size: 16px;
+            color: #00e676;
+            margin-left: 8px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .score-reminder.show {
+            opacity: 1;
         }
 
         .game-container {
@@ -153,6 +207,125 @@
             font-size: 14px;
             text-align: center;
         }
+        
+        /* 更新日志弹窗样式 */
+        .change-log-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none; /* 默认隐藏，由JS控制显示 */
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* 比游戏结束弹窗更高 */
+        }
+
+        .change-log-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: hidden;
+            color: white;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .change-log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            flex-shrink: 0;
+        }
+
+        .change-log-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: white;
+        }
+        
+        .change-log-body {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        /* 滚动条样式 */
+        .change-log-body::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .change-log-body::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+        }
+        
+        .change-log-body::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .log-entry {
+            margin-bottom: 15px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .log-date {
+            font-size: 14px;
+            color: #00e676;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .log-details {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .log-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 5px;
+        }
 
         /* 移动端适配 */
         @media (max-width: 600px) {
@@ -162,15 +335,47 @@
                 margin-bottom: 10px;
             }
         }
+
+        /* 小屏幕适配头部 */
+        @media (max-width: 450px) {
+            .game-title-text {
+                font-size: 16px;
+            }
+            .version-badge {
+                font-size: 10px;
+            }
+            .score-panel {
+                padding: 8px 12px;
+            }
+            .score-value {
+                font-size: 20px;
+            }
+            .score-label {
+                font-size: 11px;
+            }
+            .game-header {
+                padding: 10px 5px;
+            }
+        }
     </style>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div class="game-header">
         <div class="score-panel">
             <div class="score-label">得分</div>
-            <div class="score-value" id="score">0</div>
+            <div class="score-container">
+                <div class="score-value" id="score">0</div>
+                <div class="score-reminder" id="score-reminder"></div>
+            </div>
         </div>
-        <!-- 新增：刷新倒数计数器 -->
+        
+        <!-- 新增：页面中上部的版本名显示 -->
+        <div class="game-header-center">
+            <!-- 添加 id 以便绑定点击事件 -->
+            <div class="version-badge" id="versionBadge">Beta 1.2</div>
+        </div>
+
         <div class="score-panel">
             <div class="score-label">刷新倒数</div>
             <div class="score-value" id="drop-counter">6</div>
@@ -183,7 +388,7 @@
             <button class="btn btn-primary" id="startBtn">开始游戏</button>
         </div>
         <p class="instructions">鼠标移动瞄准，点击发射泡泡 | 三个相同颜色连在一起即可消除</p>
-        <p class="versions">Peter Zeng with Kimi K2 & Claude Code | Beta 1.1</p>
+        <p class="versions">Peter Zeng with AI coding</p>
     </div>
 
     <div class="game-over-modal" id="gameOverModal">
@@ -191,6 +396,47 @@
             <h2 class="game-over-title">游戏结束</h2>
             <div class="final-score" id="finalScore">0</div>
             <button class="btn btn-primary" id="restartBtn">重新开始</button>
+        </div>
+    </div>
+    
+    <!-- 新增：更新日志弹窗 -->
+    <div class="change-log-modal" id="changeLogModal">
+        <div class="change-log-content">
+            <div class="change-log-header">
+                <div class="change-log-title">更新日志</div>
+                <button class="close-btn" id="closeLogBtn">&times;</button>
+            </div>
+            <div class="change-log-body">
+                <!-- 模板内容：请在此处填写 -->
+                <div class="log-entry">
+                    <div class="log-date">2026-02-19 Beta 1.2</div>
+                    <div class="log-details">
+                        <ul class="log-list">
+                            <li>增加了得分提示、更新日志；</li>
+                            <li>修复了在重新开始游戏时，下方待发射的球颜色不变的问题；</li>
+                            <li>修复了在第二次开炮后，开始游戏按钮才变成重新开始的问题；</li>
+                            <li>修复了PC端泡泡爆炸后没有粒子效果的问题；</li>
+                            <li>将版本号的显示位置修改到了页面居中顶部。</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="log-entry">
+                    <div class="log-date">2026-02-18 Beta 1.1</div>
+                    <div class="log-details">
+                        <ul class="log-list">
+                        <li>删除了暂停按键、等级显示；</li>
+                        <li>修复了在有泡泡飞行时，按下“重新开始”，飞行中的泡泡不会消失的问题；</li>
+                        <li>修复了手机端在待发射泡泡下方点击时，泡泡会发射的问题；</li>
+                        <li>修复了第一炮未发射时，右下角显示的泡泡是实际上是两炮后的颜色的问题；</li>
+                        <li>增加了刷新倒数器。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 20px; text-align: center; flex-shrink: 0;">
+                <button class="btn btn-primary" id="confirmLogBtn">关闭</button>
+            </div>
         </div>
     </div>
 
@@ -222,6 +468,7 @@
                 this.particles = []; // 粒子效果
                 this.fallingBubbles = []; // 下落的泡泡
                 this.topRowOffset = 0; // 顶行偏移（0=偶数行，1=奇数行）
+                this.reminderTimeout = null; // 用于控制得分提示的显示时间
             }
 
             reset() {
@@ -236,11 +483,17 @@
                 this.topRowOffset = 0;
                 // 清除正在飞行的泡泡并重置发射器
                 if (shooter) {
-                    shooter.projectile = null;
-                    //shooter.reset();
+                    shooter.reset();
                 }
                 this.initGrid();
                 updateUI();
+                
+                // 重置提示
+                const reminderEl = document.getElementById('score-reminder');
+                if (reminderEl) {
+                    reminderEl.textContent = '';
+                    reminderEl.classList.remove('show');
+                }
             }
 
             initGrid() {
@@ -267,6 +520,28 @@
 
             addScore(points) {
                 this.score += points;
+                
+                // 显示得分提示
+                const reminderEl = document.getElementById('score-reminder');
+                if (reminderEl && points > 0) {
+                    reminderEl.textContent = '+' + points;
+                    reminderEl.classList.add('show');
+                    
+                    if (this.reminderTimeout) {
+                        clearTimeout(this.reminderTimeout);
+                    }
+                    
+                    this.reminderTimeout = setTimeout(() => {
+                        reminderEl.classList.remove('show');
+                        // 动画结束后清空文字，防止不可见时占用布局空间（虽然opacity 0不会，但好习惯）
+                        setTimeout(() => {
+                            if (!reminderEl.classList.contains('show')) {
+                                reminderEl.textContent = '';
+                            }
+                        }, 300);
+                    }, 3000); // Changed from 5000 to 3000
+                }
+
                 updateUI();
             }
         }
@@ -276,6 +551,13 @@
             constructor() {
                 this.x = canvas.width / 2;
                 this.y = canvas.height - 50;
+                this.angle = -Math.PI / 2;
+                this.currentBubble = this.generateBubble();
+                this.nextBubble = this.generateBubble();
+                this.projectile = null;
+            }
+
+            reset() {
                 this.angle = -Math.PI / 2;
                 this.currentBubble = this.generateBubble();
                 this.nextBubble = this.generateBubble();
@@ -711,6 +993,7 @@
                 }
             }
 
+            let floatingPoints = 0;
             // 移除未连接的泡泡
             for (let row = 0; row < CONFIG.GRID_ROWS; row++) {
                 for (let col = 0; col < CONFIG.GRID_COLS; col++) {
@@ -724,9 +1007,12 @@
                             vy: 0
                         });
                         game.grid[row][col] = null;
-                        game.addScore(20);
+                        floatingPoints += 20;
                     }
                 }
+            }
+            if (floatingPoints > 0) {
+                game.addScore(floatingPoints);
             }
         }
 
@@ -978,7 +1264,9 @@
         // 更新开始按钮状态
         function updateStartButton() {
             const btn = document.getElementById('startBtn');
-            if (game.shots === 0) {
+            // 修改：只要有发射记录或者当前有子弹在飞，就显示重新开始
+            // 仅在完全重置状态（shots=0且无飞行泡泡）下显示开始游戏
+            if (game.shots === 0 && !shooter.projectile) {
                 btn.textContent = '开始游戏';
             } else {
                 btn.textContent = '重新开始';
@@ -994,12 +1282,48 @@
         document.getElementById('restartBtn').addEventListener('click', () => {
             game.reset();
             document.getElementById('gameOverModal').style.display = 'none';
+            // 添加：从弹窗重启时也更新按钮状态
+            updateStartButton();
         });
+
+        // 初始化更新日志弹窗
+        function initChangeLog() {
+            const modal = document.getElementById('changeLogModal');
+            const closeBtn = document.getElementById('closeLogBtn');
+            const confirmBtn = document.getElementById('confirmLogBtn');
+            // 新增：获取版本号元素
+            const versionBadge = document.getElementById('versionBadge');
+            
+            // 移除时间检测逻辑
+            // 点击版本号显示弹窗
+            versionBadge.addEventListener('click', () => {
+                modal.style.display = 'flex';
+            });
+
+            // 关闭逻辑
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            confirmBtn.addEventListener('click', closeModal);
+            
+            // 点击背景关闭
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // 页面加载完成后调用
+        initChangeLog();
 
         // 初始化
         game.reset();
         updateStartButton();
         gameLoop();
     </script>
+<script type="module" src="/index.tsx"></script>
 </body>
 </html>
