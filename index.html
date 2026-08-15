@@ -239,15 +239,11 @@
     svg.setAttribute('viewBox', (vx - pad) + ' ' + (vy - pad) + ' ' + (vw + pad * 2) + ' ' + (vh + pad * 2));
     /* 显式像素尺寸：不依赖浏览器对动态 viewBox 的 height:auto 重算
        （Safari 会按旧比例渲染导致笔画变形/乱跳），直接写死宽高。
-        两轴均不超过视口 92%，并保留原 CSS 的 255vh 上限语义。 */
-    const fw = vw + pad * 2, fh = vh + pad * 2;
-    const scale = Math.min(
-      (window.innerWidth * 0.92) / fw,
-      (window.innerHeight * 0.92) / fh,
-      (window.innerHeight * 2.55) / fw
-    );
-    svg.style.width = Math.max(1, fw * scale) + 'px';
-    svg.style.height = Math.max(1, fh * scale) + 'px';
+       两轴均不超过视口 92%，并保留原 CSS 的 255vh 上限语义。
+       尺寸在每次 setupLang 与视口变化（URL 栏收起/展开、旋转）时重算 */
+    svg._fitW = vw + pad * 2;
+    svg._fitH = vh + pad * 2;
+    fitSvg();
     const sw = Math.max(3, vh * 0.06);
     lang._sw = sw;
     lang._els.forEach(function (el, i) {
@@ -263,6 +259,30 @@
     penGlow.setAttribute('r', sw * 1.8);
   }
 
+  /* 视口可用高度：visualViewport 才能反映 iPhone URL 栏收起/展开后的真实高度 */
+  function viewH() {
+    const vv = window.visualViewport;
+    return vv && vv.height > 0 ? vv.height : window.innerHeight;
+  }
+  function fitSvg() {
+    const fw = svg._fitW, fh = svg._fitH;
+    if (!(fw > 0 && fh > 0)) return;
+    const scale = Math.min(
+      (window.innerWidth * 0.92) / fw,
+      (viewH() * 0.92) / fh,
+      (viewH() * 2.55) / fw
+    );
+    svg.style.width = Math.max(1, fw * scale) + 'px';
+    svg.style.height = Math.max(1, fh * scale) + 'px';
+  }
+  let fitTimer = null;
+  function scheduleFit() {
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(fitSvg, 150);
+  }
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', scheduleFit);
+  window.addEventListener('orientationchange', scheduleFit);
+
   /* 按各路径长度比例分配 DRAW_MS，逐条书写；笔尖跟随当前路径 */
   function drawLang(idx, done) {
     const els = LANGS[idx]._els;
@@ -273,10 +293,14 @@
     const vt = lens.map(function (l) { return l > 0 ? l : sw; });
     const total = vt.reduce(function (a, b) { return a + b; }, 0);
 
+    /* Safari 对复杂路径 getTotalLength 偶发低估（真机 iPhone 明显）：
+       dasharray 加安全余量（5% + 一个笔宽），保证每笔尾部与下一笔的接头
+       始终被墨水覆盖（囉口字旁末横、拉丁变音符衔接问题） */
+    const dash = lens.map(function (l) { return l > 0 ? l * 1.05 + sw : 0; });
     els.forEach(function (e, i) {
       if (!(lens[i] > 0)) return;
-      e.style.strokeDasharray  = lens[i];
-      e.style.strokeDashoffset = lens[i];
+      e.style.strokeDasharray  = dash[i];
+      e.style.strokeDashoffset = dash[i];
     });
     /* 笔尖先就位再显现，避免以旧语言收笔位置闪现一帧 */
     const startPt = els[0].getPointAtLength(0);
@@ -305,7 +329,8 @@
         els[pi].style.opacity = Math.min(1, (target - acc) / sw);
       } else {
         const inPath = Math.min(lens[pi], target - acc);
-        els[pi].style.strokeDashoffset = lens[pi] - inPath;
+        /* 余量随书写进度线性消退：起点 offset=dash 完全隐藏，终点 offset=0 全覆盖 */
+        els[pi].style.strokeDashoffset = (lens[pi] - inPath) * 1.05 + sw;
         const pt = els[pi].getPointAtLength(Math.min(inPath, lens[pi]));
         movePen(pt.x, pt.y);
       }
@@ -392,10 +417,10 @@
     setupLang(seq[0]);
     LANGS[seq[0]]._els.forEach(function (el, i) {
       const len = LANGS[seq[0]]._lens[i];
-      if (len === 0) {
+      if (!(len > 0)) {
         el.style.opacity = 1;
       } else {
-        el.style.strokeDasharray  = len;
+        el.style.strokeDasharray  = len * 1.05 + LANGS[seq[0]]._sw;
         el.style.strokeDashoffset = 0;
       }
     });
