@@ -314,23 +314,34 @@
       const p = easeInOut(Math.min(1, (now - t0) / DRAW_MS));
       const target = p * total;
       while (pi < lens.length && acc + vt[pi] <= target) {
-        if (!(lens[pi] > 0)) { els[pi].style.opacity = 1; }  /* 圆点窗口走完，完全显现 */
+        if (!(lens[pi] > 0)) {
+          els[pi].style.opacity = 1;  /* 圆点窗口走完，完全显现 */
+        } else {
+          els[pi].style.strokeDashoffset = 0;  /* 非圆点被消费即完成：确定性归零，
+              不再依赖帧率，杜绝完成态缺笔（囉口字旁末横/变音符） */
+        }
         acc += vt[pi];
         pi++;
       }
       if (pi >= lens.length) {
         penOn(false);
         clearTimeout(st.wd);
+        for (var zi = 0; zi < lens.length; zi++) {
+          if (lens[zi] > 0) els[zi].style.strokeDashoffset = 0;  /* 兜底归零 */
+        }
         done();
         return;
       }
       if (!(lens[pi] > 0)) {
-        /* 圆点窗口进行中：随书写进度淡入 */
+        /* 圆点窗口进行中：随书写进度淡入，笔尖/光晕移到圆点处 */
         els[pi].style.opacity = Math.min(1, (target - acc) / sw);
+        const dp = els[pi].getPointAtLength(0);
+        movePen(dp.x, dp.y);
       } else {
         const inPath = Math.min(lens[pi], target - acc);
-        /* 余量随书写进度线性消退：起点 offset=dash 完全隐藏，终点 offset=0 全覆盖 */
-        els[pi].style.strokeDashoffset = (lens[pi] - inPath) * 1.05 + sw;
+        /* 墨水长度恒等于笔尖进度（covered = dash - offset = inPath），
+           余量全部落在尾端，笔尖/光晕与墨迹末端始终重合 */
+        els[pi].style.strokeDashoffset = dash[pi] - inPath;
         const pt = els[pi].getPointAtLength(Math.min(inPath, lens[pi]));
         movePen(pt.x, pt.y);
       }
