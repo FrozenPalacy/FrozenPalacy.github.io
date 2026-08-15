@@ -89,8 +89,7 @@
     height: auto;
     /* 注意：不要在 svg 及其动画子树任何节点上使用 CSS filter（drop-shadow 等）。
        Chromium 对带 filter 的合成层内做 opacity 过渡时，合成器纹理缓存
-       会让子元素以满透明度闪现一帧（用户可见的"小白点闪光"）。
-       柔光改用"幽灵笔迹"：每组笔画下垫一条同形、加宽、半透明的路径。 */
+       会让子元素以满透明度闪现一帧（用户可见的"小白点闪光"）。 */
   }
 
   /* 当前语言手写笔迹 */
@@ -216,15 +215,44 @@
       group.appendChild(p);
       return p;
     });
-    lang._lens = lang._els.map(function (e) { return e.getTotalLength(); });
-    const b = group.getBBox();
-    const pad = Math.max(b.width, b.height) * 0.18;
-    svg.setAttribute('viewBox', (b.x - pad) + ' ' + (b.y - pad) + ' ' + (b.width + pad * 2) + ' ' + (b.height + pad * 2));
-    const sw = Math.max(3, b.height * 0.06);
+    lang._lens = lang._els.map(function (e) {
+      const L = e.getTotalLength();
+      /* Safari 对超大/复杂路径 getTotalLength 偶发 NaN：用 d 文本长度
+         估算兜底，避免 dasharray 失效导致该笔画提前整条显现（错位感）。
+         注意：0 是合法的圆点（dot）语义，必须保留，不能被兜底覆盖 */
+      return isFinite(L) && L >= 0 ? L : Math.max(50, e.getAttribute('d').length * 1.5);
+    });
+    /* 笔迹包围盒：优先用数据自带（生成时精确计算）的 viewBox，
+       绕开 iPhone Safari 对刚插入路径组 getBBox 懒布局返回不全值的时序问题
+       （路径最多的繁体尤其明显）；getBBox 仅作数据缺失时的兜底 */
+    let vx, vy, vw, vh;
+    if (lang.viewBox) {
+      const vb = String(lang.viewBox).trim().split(/\s+/).map(Number);
+      if (vb.length === 4 && vb[2] > 0 && vb[3] > 0) { vx = vb[0]; vy = vb[1]; vw = vb[2]; vh = vb[3]; }
+    }
+    if (!(vw > 0 && vh > 0)) {
+      const b = group.getBBox();
+      if (b.width > 0 && b.height > 0) { vx = b.x; vy = b.y; vw = b.width; vh = b.height; }
+      else { vx = 0; vy = 0; vw = 2000; vh = 1200; }
+    }
+    const pad = Math.max(vw, vh) * 0.18;
+    svg.setAttribute('viewBox', (vx - pad) + ' ' + (vy - pad) + ' ' + (vw + pad * 2) + ' ' + (vh + pad * 2));
+    /* 显式像素尺寸：不依赖浏览器对动态 viewBox 的 height:auto 重算
+       （Safari 会按旧比例渲染导致笔画变形/乱跳），直接写死宽高。
+        两轴均不超过视口 92%，并保留原 CSS 的 255vh 上限语义。 */
+    const fw = vw + pad * 2, fh = vh + pad * 2;
+    const scale = Math.min(
+      (window.innerWidth * 0.92) / fw,
+      (window.innerHeight * 0.92) / fh,
+      (window.innerHeight * 2.55) / fw
+    );
+    svg.style.width = Math.max(1, fw * scale) + 'px';
+    svg.style.height = Math.max(1, fh * scale) + 'px';
+    const sw = Math.max(3, vh * 0.06);
     lang._sw = sw;
     lang._els.forEach(function (el, i) {
       el.style.strokeWidth = sw + 'px';
-      if (lang._lens[i] === 0) {
+      if (!(lang._lens[i] > 0)) {
         /* 零长度路径（i/j 圆点等）：不走 dasharray（Chromium 渲染不稳定），
            用透明度在其时序窗口内平滑淡入 */
         el.style.opacity = 0;
@@ -246,7 +274,7 @@
     const total = vt.reduce(function (a, b) { return a + b; }, 0);
 
     els.forEach(function (e, i) {
-      if (lens[i] === 0) return;
+      if (!(lens[i] > 0)) return;
       e.style.strokeDasharray  = lens[i];
       e.style.strokeDashoffset = lens[i];
     });
@@ -262,7 +290,7 @@
       const p = easeInOut(Math.min(1, (now - t0) / DRAW_MS));
       const target = p * total;
       while (pi < lens.length && acc + vt[pi] <= target) {
-        if (lens[pi] === 0) { els[pi].style.opacity = 1; }  /* 圆点窗口走完，完全显现 */
+        if (!(lens[pi] > 0)) { els[pi].style.opacity = 1; }  /* 圆点窗口走完，完全显现 */
         acc += vt[pi];
         pi++;
       }
@@ -272,7 +300,7 @@
         done();
         return;
       }
-      if (lens[pi] === 0) {
+      if (!(lens[pi] > 0)) {
         /* 圆点窗口进行中：随书写进度淡入 */
         els[pi].style.opacity = Math.min(1, (target - acc) / sw);
       } else {
